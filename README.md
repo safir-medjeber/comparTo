@@ -1,1 +1,1 @@
-# comparTo
+# compareTo
