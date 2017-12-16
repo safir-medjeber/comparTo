@@ -4,18 +4,14 @@ import {IonicPage, NavController} from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-instructions',
-  templateUrl: 'thematics.html'
+  selector: 'page-game-end',
+  templateUrl: 'game-end.html'
 })
 
-export class ThematicsPage {
+export class EndGamePage {
 
   constructor(public navCtrl: NavController) {
 
   }
 
-
-  goToGamePage(){
-    this.navCtrl.push('GamePage');
-  }
 }
