@@ -1,17 +1,24 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>CompareTo</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-
-  <button ion-button block (click)="goToInstructionsPage()">INSTRUCTIONS</button>
-  <button ion-button block (click)="goToThematicsPage()">THEMATICS</button>
-
-
+<ion-content text-center padding class="vertical-align-content">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="main-menu-header">
+          <span class="main-menu-title">CompareTo</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <button ion-button block large color="light" (click)="goToThematicsPage()">Jouer</button>
+        </div>
+        <div padding-top>
+          <button ion-button block large color="light" (click)="goToInstructionsPage()">Instructions</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
+
