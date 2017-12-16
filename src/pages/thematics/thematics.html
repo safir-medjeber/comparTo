@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>CompareTo</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
- THEMATICS
+<ion-content text-center padding class="vertical-align-content">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <span class="thematics-title">Thématiques</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div padding-top>
+          <button ion-button block large color="light" (click)="goToGamePage()">Pays</button>
+        </div>
+        <div padding-top>
+          <button ion-button block large color="light" (click)="goToGamePage()">Electronique/Quotidien</button>
+        </div>
+        <div padding-top>
+          <button ion-button block large color="light" (click)="goToGamePage()">Luxe/Précieux</button>
+        </div>
+        <div padding-top>
+          <button ion-button block large color="light" (click)="goToGamePage()">Sans Thème</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
+

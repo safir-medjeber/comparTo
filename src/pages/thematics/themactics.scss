@@ -1,4 +1,13 @@
-page-thematics
-{
 
+.thematics-title{
+  font-size: 4rem;
+  color: darkgrey;
+  font-weight: normal;
+}
+
+
+.vertical-align-content > * {
+  display: flex!important;
+  align-content: center!important;
+  align-items: center!important;
 }

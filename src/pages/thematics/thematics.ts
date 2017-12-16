@@ -14,4 +14,8 @@ export class ThematicsPage {
 
   }
 
+
+  goToGamePage(){
+    this.navCtrl.push('GamePage')
+  }
 }

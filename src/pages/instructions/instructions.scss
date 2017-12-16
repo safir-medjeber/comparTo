@@ -1,3 +1,21 @@
-page-instructions{
 
+.instructions-title{
+  font-size: 4rem;
+  color: darkgrey;
+  font-weight: normal;
+}
+
+
+.vertical-align-content > * {
+  display: flex!important;
+  align-content: center!important;
+  align-items: center!important;
+}
+
+.badge-link{
+  text-decoration: none;
+  color: white;
+}
+.badge-content{
+  font-size: 2rem;
 }
