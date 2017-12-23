@@ -14,4 +14,8 @@ export class GamePage {
 
   }
 
+  goToGameOptionsPage(){
+    this.navCtrl.push('GameOptionsPage');
+  }
+
 }
