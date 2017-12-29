@@ -63,4 +63,8 @@ export class ItemService {
     this.items.shift();
   }
 
+  public getItemsByThematic(thematic: string): Item[]{
+   return this.items.filter(item => item.thematic === thematic )
+
+  }
 }
