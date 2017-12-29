@@ -4,8 +4,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+
+
 import { MyApp } from './app.component';
 import { MainMenuPage } from '../pages/main-menu/main-menu';
+import {ItemService} from '../services/item.service'
 
 @NgModule({
   declarations: [
@@ -14,7 +18,9 @@ import { MainMenuPage } from '../pages/main-menu/main-menu';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -24,7 +30,9 @@ import { MainMenuPage } from '../pages/main-menu/main-menu';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HttpClient,
+    ItemService
   ]
 })
 export class AppModule {}
