@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Item} from "../data/Item";
-
+import {Observable} from "rxjs/Observable";
+import { of } from 'rxjs/observable/of';
 
 const NAME = 0;
 const URL = 1;
@@ -18,13 +19,19 @@ export class ItemService {
   constructor(private  httpClient: HttpClient) {
   }
 
-  public loadData(): Item[]{
-    this.loadFile();
-    return this.items;
+  // public loadData(): Item[]{
+  //   this.loadFile();
+  //   return this.items;
+  // }
+
+
+  public getData(): Observable<Item[]>{
+    return of(this.loadFile())
   }
 
   private loadFile() {
     this.httpClient.get("assets/data/dataInput.csv", { responseType: 'text'}).subscribe(data =>this.extractData(data), error => ItemService.handleError(error));
+    return this.items;
   }
 
   private static handleError (error: any) {
@@ -64,7 +71,6 @@ export class ItemService {
   }
 
   public getItemsByThematic(thematic: string): Item[]{
-   return this.items.filter(item => item.thematic === thematic )
-
+    return this.items.filter(item => item.thematic === thematic )
   }
 }

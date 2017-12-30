@@ -16,7 +16,8 @@ export class MainMenuPage implements OnInit{
 
   ngOnInit(){
     console.log("onInit - LOADING DATA");
-    this.items = this.itemService.loadData();
+    //this.items = this.itemService.loadData();
+    this.itemService.getData().subscribe(items => this.items = items);
   }
 
   goToInstructionsPage() {
