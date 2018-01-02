@@ -17,7 +17,7 @@ const UNIT = 4;
 @Injectable()
 export class ItemService {
 
-  items: Observable<Item[]>;
+  private readonly items: Observable<Item[]>;
   constructor(private  httpClient: HttpClient) {
     this.items = this.getData();
   }
