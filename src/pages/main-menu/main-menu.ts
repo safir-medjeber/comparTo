@@ -19,7 +19,8 @@ export class MainMenuPage implements OnInit{
   }
 
   goToInstructionsPage() {
-    this.navCtrl.push('InstructionsPage');
+    console.log(this.itemService.getItemsByThematic("Pays").subscribe(data => console.log(data)));
+    //this.navCtrl.push('InstructionsPage');
   }
 
   goToThematicsPage(){

@@ -3,6 +3,9 @@ import {HttpClient} from "@angular/common/http";
 import {Item} from "../data/Item";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/operator/map";
+import "rxjs/add/operator/filter";
+
+
 
 const NAME = 0;
 const URL = 1;
@@ -14,8 +17,9 @@ const UNIT = 4;
 @Injectable()
 export class ItemService {
 
-
+  items: Observable<Item[]>;
   constructor(private  httpClient: HttpClient) {
+    this.items = this.getData();
   }
 
   public getData(): Observable<Item[]>{
@@ -23,9 +27,7 @@ export class ItemService {
   }
 
   private extractData(csvData: string): Item[] {
-    let lines = csvData.split(/\r\n|\n/);
-    lines.shift();
-    return lines.map(line => this.serializeData(line));
+    return  csvData.split(/\r\n|\n/).slice(1).map(this.serializeData);
   }
 
 
@@ -35,7 +37,10 @@ export class ItemService {
   }
 
 
-  // public getItemsByThematic(thematic: string): Item[]{
-  //   return this.items.filter(item => item.thematic === thematic )
-  // }
+  public getItemsByThematic(thematic: string): Observable<Item[]>{
+    return this.items.map(item => item.filter(item => item.thematic === thematic));
+  }
+
+
+
 }
