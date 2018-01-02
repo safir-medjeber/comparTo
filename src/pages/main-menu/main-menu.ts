@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ItemService } from '../../services/item.service';
-import {Item} from "../../data/Item";
 
 
 @Component({
@@ -10,19 +9,17 @@ import {Item} from "../../data/Item";
 })
 export class MainMenuPage implements OnInit{
 
-  items: Item[];
+
   constructor(public navCtrl: NavController, private itemService: ItemService) {
   }
 
   ngOnInit(){
     console.log("onInit - LOADING DATA");
-    //this.items = this.itemService.loadData();
-    this.itemService.getData().subscribe(items => this.items = items);
+    this.itemService.getData().subscribe(data => console.log(data));
   }
 
   goToInstructionsPage() {
-    console.log(this.itemService.getItemsByThematic('Pays'));
-    //this.navCtrl.push('InstructionsPage');
+    this.navCtrl.push('InstructionsPage');
   }
 
   goToThematicsPage(){
