@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Item} from "../../model/Item";
-import {ItemService} from "../../services/item.service";
 
 
 @IonicPage()
@@ -19,11 +18,18 @@ export class GamePage implements OnInit {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.itemsByThematic = this.navParams.get('thematicParam');
+
+    this.itemsByThematic =
+      [{name: "Algérie", url: "http://flags.fmcdn.net/data/flags/w580/dz.png", value: 38700000, thematic: "Pays", unit: "Unité"},
+        {name: "Arménie", url: "http://flags.fmcdn.net/data/flags/w580/am.png", value: 3017400, thematic: "Pays", unit: "Unité"},
+        {name: "France", url: "http://flags.fmcdn.net/data/flags/w580/fr.png", value: 65844000, thematic: "Pays", unit: "Unité"}];
+
+    console.log(this.itemsByThematic);
   }
 
   ngOnInit(){
-    this.itemsByThematic = this.navParams.get('thematicParam');
-    this.beginGame();
+    this.firstQuestion();
   }
 
 
@@ -38,7 +44,7 @@ export class GamePage implements OnInit {
 
 
   private chooseNewCandidate(previousCandidate: Item):Item {
-    let indexCandidate: number = this.getRandomInt(0, this.itemsByThematic.length);
+    let indexCandidate: number = this.getRandomInt(0, this.itemsByThematic.length-1);
     if(previousCandidate){
       while( this.isTheSameCandidate(previousCandidate, this.itemsByThematic[indexCandidate])){
         indexCandidate = this.getRandomInt(0, this.itemsByThematic.length);
@@ -52,9 +58,43 @@ export class GamePage implements OnInit {
   }
 
 
-  private beginGame(){
+  private firstQuestion(){
     this.candidate1 = this.chooseNewCandidate(undefined);
     this.candidate2 = this.chooseNewCandidate(this.candidate1);
   }
+
+  private nextQuestion(){
+    this.candidate1 = this.chooseNewCandidate(undefined);
+    this.candidate2 = this.chooseNewCandidate(this.candidate1);
+  }
+
+
+
+  private determineResponse(): number {
+    if(this.candidate1.value > this.candidate2.value) {
+      return this.candidate1.value;
+    }
+    else{
+      return this.candidate2.value
+    }
+  }
+
+  private isTheGoodResponse(responseValue: number): boolean{
+    return this.determineResponse() == responseValue;
+  }
+
+
+  public playerResponse(responseValue: number){
+    console.log(responseValue);
+   if(this.isTheGoodResponse(responseValue)){
+     console.log("GOOD");
+     this.nextQuestion();
+   }
+   else{
+     console.log("BAD");
+   }
+  }
+
+
 
 }

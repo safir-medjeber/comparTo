@@ -13,7 +13,7 @@
 
       <ion-card>
         IMAGE 1
-        <img src={{this.candidate1?.url}}/>
+        <img src={{this.candidate1?.url}} (click)="playerResponse(this.candidate1.value)"/>
       </ion-card>
 
 
@@ -27,7 +27,7 @@
 
       <ion-card>
         IMAGE 2
-        <img src={{this.candidate2?.url}}/>
+        <img src={{this.candidate2?.url}} (click)="playerResponse(this.candidate2.value)"/>
       </ion-card>
     </ion-row>
   </ion-grid>
