@@ -15,12 +15,13 @@ export class MainMenuPage implements OnInit{
 
   ngOnInit(){
     console.log("onInit - LOADING DATA");
-    this.itemService.getData().subscribe(data => console.log(data));
+    var lol;
+    this.itemService.getData().subscribe(data => lol=data);
+    console.log(lol);
   }
 
   goToInstructionsPage() {
-    console.log(this.itemService.getItemsByThematic("Pays").subscribe(data => console.log(data)));
-    //this.navCtrl.push('InstructionsPage');
+    this.navCtrl.push('InstructionsPage');
   }
 
   goToThematicsPage(){

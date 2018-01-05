@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Item} from "../data/Item";
+import {Item} from "../model/Item";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/filter";
@@ -15,7 +15,7 @@ const UNIT = 4;
 
 
 @Injectable()
-export class ItemService {
+export class ItemService{
 
   private readonly items: Observable<Item[]>;
   constructor(private  httpClient: HttpClient) {
