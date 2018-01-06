@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Item} from "../../model/Item";
+import {MOCK_ITEMS} from "../../services/mock-items";
 
 
 @IonicPage()
@@ -18,14 +19,8 @@ export class GamePage implements OnInit {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.itemsByThematic = this.navParams.get('thematicParam');
-
-    this.itemsByThematic =
-      [{name: "Algérie", url: "http://flags.fmcdn.net/data/flags/w580/dz.png", value: 38700000, thematic: "Pays", unit: "Unité"},
-        {name: "Arménie", url: "http://flags.fmcdn.net/data/flags/w580/am.png", value: 3017400, thematic: "Pays", unit: "Unité"},
-        {name: "France", url: "http://flags.fmcdn.net/data/flags/w580/fr.png", value: 65844000, thematic: "Pays", unit: "Unité"}];
-
-    console.log(this.itemsByThematic);
+   // this.itemsByThematic = this.navParams.get('thematicParam');
+    this.itemsByThematic = MOCK_ITEMS;
   }
 
   ngOnInit(){
