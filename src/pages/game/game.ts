@@ -39,13 +39,13 @@ export class GamePage implements OnInit {
   }
 
 
-  public playerResponse(playerResponse: number){
-    console.log(playerResponse);
-    if(this.gameRulesService.isTheGoodAnswer(playerResponse, this.proposition1, this.proposition2)){
-      this.updateView(this.gameRulesService.getNextQuestion(this.itemsByThematic),this.gameRulesService.updateScore(this.score));
+
+  public playerResponse(playerAnswer: Item, idPositionAnswer: number){
+    console.log(playerAnswer);
+    if(this.gameRulesService.isTheGoodAnswer(playerAnswer, this.proposition1, this.proposition2)){
+      this.updateView(this.gameRulesService.getNextQuestion(this.itemsByThematic, playerAnswer, idPositionAnswer),this.gameRulesService.updateScore(this.score));
     }
     else{
-      console.log("BAD");
       this.goToGameEndPage();
     }
   }

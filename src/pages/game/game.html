@@ -15,7 +15,7 @@
 
     <ion-row style ="height:47%">
       <ion-card>
-        <img src="{{this.proposition1?.url}}" (click)="playerResponse(this.proposition1.value)"/>
+        <img src="{{this.proposition1?.url}}" (click)="playerResponse(this.proposition1, 1)"/>
         <h2>{{this.proposition1?.name}}</h2>
       </ion-card>
     </ion-row>
@@ -27,7 +27,7 @@
 
     <ion-row style ="height:47%">
       <ion-card>
-        <img src={{this.proposition2?.url}} (click)="playerResponse(this.proposition2.value)"/>
+        <img src={{this.proposition2?.url}} (click)="playerResponse(this.proposition2, 2)"/>
         <h2>{{this.proposition2?.name}}</h2>
       </ion-card>
     </ion-row>
