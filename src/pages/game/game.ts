@@ -20,6 +20,7 @@ export class GamePage implements OnInit {
   private proposition1: Item;
   private proposition2: Item;
   private score: number = 0;
+  private handleTimeout: number ;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public gameRulesService: GameRulesService) {
@@ -38,18 +39,23 @@ export class GamePage implements OnInit {
     this.navCtrl.push('GameEndPage', {scoreParam: this.score, thematicParam: this.itemsByThematic});
   }
 
-
-
   public playerResponse(playerAnswer: Item, idPositionAnswer: number){
     console.log(playerAnswer);
+    clearTimeout(this.handleTimeout);
     if(this.gameRulesService.isTheGoodAnswer(playerAnswer, this.proposition1, this.proposition2)){
       this.updateView(this.gameRulesService.getNextQuestion(this.itemsByThematic, playerAnswer, idPositionAnswer),this.gameRulesService.updateScore(this.score));
+      this.timer(5000);
     }
     else{
       this.goToGameEndPage();
     }
   }
 
+  private timer(timeToAnswer: number): void {
+    this.handleTimeout = setTimeout(() => {
+      this.goToGameEndPage();
+    }, timeToAnswer);
+  }
 
   private updateView(question: Question, score: number): void{
     this.proposition1 = question.getProposition1();
