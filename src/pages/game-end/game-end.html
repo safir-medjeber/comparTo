@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>CompareTo</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-FIN DE PARTIE
+<ion-content text-center padding class="vertical-align-content">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <span class="thematics-title">Fin de Partie</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          SCORE : {{this.score}} <br>
+          RECORD :
+        </ion-card>
+        <div padding-top>
+          <button ion-button block large color="light" (click)="goToGamePage()">Rejouer</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
+

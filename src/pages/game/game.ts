@@ -15,6 +15,8 @@ import {GameRulesService} from "../../services/gameRules.service";
 export class GamePage implements OnInit {
 
   private itemsByThematic: Item[];
+  private thematicSelected: string;
+
   private proposition1: Item;
   private proposition2: Item;
   private score: number = 0;
@@ -30,7 +32,10 @@ export class GamePage implements OnInit {
   }
 
   goToGameOptionsPage(){
-    this.navCtrl.push('GameOptionsPage');
+    this.navCtrl.push('GameOptionsPage',);
+  }
+  goToGameEndPage(){
+    this.navCtrl.push('GameEndPage', {scoreParam: this.score, thematicParam: this.itemsByThematic});
   }
 
 
@@ -41,6 +46,7 @@ export class GamePage implements OnInit {
     }
     else{
       console.log("BAD");
+      this.goToGameEndPage();
     }
   }
 
