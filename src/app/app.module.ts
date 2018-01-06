@@ -9,6 +9,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { MyApp } from './app.component';
 import { MainMenuPage } from '../pages/main-menu/main-menu';
 import {ItemService} from '../services/item.service'
+import {GameRulesService} from "../services/gameRules.service";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {ItemService} from '../services/item.service'
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ItemService
+    ItemService,
+    GameRulesService
   ]
 })
 export class AppModule {}

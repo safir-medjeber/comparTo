@@ -5,29 +5,32 @@
 
 
   <ion-grid style ="height:100%">
-    <ion-row style ="height:4%">
-      <ion-icon name="pause" (click)="goToGameOptionsPage()" class="larger" padding-right></ion-icon>
-      <ion-icon name="volume-up" class="larger "></ion-icon>
+    <ion-row style ="height:6%" >
+        <ion-icon name="pause" (click)="goToGameOptionsPage()" class="larger" padding-right></ion-icon>
+        <ion-icon name="volume-up" class="larger "></ion-icon>
+        <h2>{{this.score}}</h2>
     </ion-row>
-    <ion-row style ="height:48%">
 
+
+
+    <ion-row style ="height:47%">
       <ion-card>
         IMAGE 1
-        <img src={{this.candidate1?.url}} (click)="playerResponse(this.candidate1.value)"/>
+        <img src="{{this.proposition1?.url}}" (click)="playerResponse(this.proposition1.value)"/>
+        <h2>{{this.proposition1?.name}}</h2>
       </ion-card>
-
-
-
     </ion-row>
+
+
     <ion-row>
       QUESTION : Quel est le pays plus peuplé ?
     </ion-row>
 
-    <ion-row style ="height:48%">
-
+    <ion-row style ="height:47%">
       <ion-card>
         IMAGE 2
-        <img src={{this.candidate2?.url}} (click)="playerResponse(this.candidate2.value)"/>
+        <img src={{this.proposition2?.url}} (click)="playerResponse(this.proposition2.value)"/>
+        <h2>{{this.proposition2?.name}}</h2>
       </ion-card>
     </ion-row>
   </ion-grid>
