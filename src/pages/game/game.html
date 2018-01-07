@@ -5,27 +5,29 @@
 
 
   <ion-grid style ="height:100%">
-    <ion-row style ="height:4%">
+    <ion-row style ="height:6%" >
         <ion-icon name="pause" (click)="goToGameOptionsPage()" class="larger" padding-right></ion-icon>
         <ion-icon name="volume-up" class="larger "></ion-icon>
+        <h2>{{this.score}}</h2>
     </ion-row>
-    <ion-row style ="height:48%">
-
-        <ion-card>
-          IMAGE 1
-        </ion-card>
 
 
 
-    </ion-row>
-<ion-row>
-QUESTION:
-</ion-row>
-
-    <ion-row style ="height:48%">
-
+    <ion-row style ="height:47%">
       <ion-card>
-        IMAGE 2
+        <img src="{{this.currentQuestion.proposition1?.url}}" (click)="playerAnswer(this.currentQuestion.proposition1, 1)"/>
+        <h2>{{this.currentQuestion.proposition1?.name}}</h2>
+      </ion-card>
+    </ion-row>
+
+    <ion-row>
+      {{this.currentQuestion.question}}
+    </ion-row>
+
+    <ion-row style ="height:47%">
+      <ion-card>
+        <img src={{this.currentQuestion.proposition2?.url}} (click)="playerAnswer(this.currentQuestion.proposition2, 2)"/>
+        <h2>{{this.currentQuestion.proposition2?.name}}</h2>
       </ion-card>
     </ion-row>
   </ion-grid>

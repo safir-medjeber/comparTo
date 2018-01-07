@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
+import {ItemService} from "../../services/item.service";
 
 
 @IonicPage()
@@ -10,12 +11,15 @@ import {IonicPage, NavController} from 'ionic-angular';
 
 export class ThematicsPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController , public itemService: ItemService) {
 
   }
 
 
   goToGamePage(){
-    this.navCtrl.push('GamePage');
+    this.itemService.getItemsByThematic("Pays").subscribe((data) => {
+      this.navCtrl.push('GamePage', { thematicParam: data });
+    });
+
   }
 }

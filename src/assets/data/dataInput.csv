@@ -1,5 +1,200 @@
-Nom,image,valeur,Thématique,"Unité (gramme ..., unité, litre)"
+Nom,Url,Valeur,Thématique,Unité
+Afghanistan,http://flags.fmcdn.net/data/flags/w580/af.png,25500100,Pays,Unité
+Afrique du Sud,http://flags.fmcdn.net/data/flags/w580/za.png,52981991,Pays,Unité
+Albanie,http://flags.fmcdn.net/data/flags/w580/al.png,2821977,Pays,Unité
 Algérie,http://flags.fmcdn.net/data/flags/w580/dz.png,38700000,Pays,Unité
+Allemagne,http://flags.fmcdn.net/data/flags/w580/de.png,80619000,Pays,Unité
+Andorre,http://flags.fmcdn.net/data/flags/w580/ad.png,76098,Pays,Unité
+Angola,http://flags.fmcdn.net/data/flags/w580/ao.png,20609294,Pays,Unité
+Antigua-et-Barbuda,http://flags.fmcdn.net/data/flags/w580/ag.png,86295,Pays,Unité
+Arabie saoudite,http://flags.fmcdn.net/data/flags/w580/sa.png,29994272,Pays,Unité
+Argentine,http://flags.fmcdn.net/data/flags/w580/ar.png,41660096,Pays,Unité
 Arménie,http://flags.fmcdn.net/data/flags/w580/am.png,3017400,Pays,Unité
+Australie,http://flags.fmcdn.net/data/flags/h80/au.png,23414552,Pays,Unité
+Autriche,http://flags.fmcdn.net/data/flags/w580/at.png,8504850,Pays,Unité
+Azerbaïdjan,http://flags.fmcdn.net/data/flags/w580/az.png,9477100,Pays,Unité
+Bahamas,http://flags.fmcdn.net/data/flags/w580/bs.png,351461,Pays,Unité
+Bahreïn,http://flags.fmcdn.net/data/flags/w580/bh.png,1234571,Pays,Unité
+Bangladesh,http://flags.fmcdn.net/data/flags/w580/bd.png,152518015,Pays,Unité
+Barbade,http://flags.fmcdn.net/data/flags/w580/bb.png,285000,Pays,Unité
+Belgique,http://flags.fmcdn.net/data/flags/w580/be.png,11132269,Pays,Unité
+Belize,http://flags.fmcdn.net/data/flags/w580/bz.png,349728,Pays,Unité
+Bénin,http://flags.fmcdn.net/data/flags/w580/bj.png,10323000,Pays,Unité
+Bhoutan,http://flags.fmcdn.net/data/flags/w580/bt.png,745200,Pays,Unité
+Biélorussie,http://flags.fmcdn.net/data/flags/w580/by.png,9468100,Pays,Unité
+Birmanie,http://flags.fmcdn.net/data/flags/w580/mm.png,53259000,Pays,Unité
+Bolivie,http://flags.fmcdn.net/data/flags/w580/bo.png,10027254,Pays,Unité
+Bosnie-Herzégovine,http://flags.fmcdn.net/data/flags/w580/ba.png,3791622,Pays,Unité
+Botswana,http://flags.fmcdn.net/data/flags/w580/bw.png,2024904,Pays,Unité
+Brésil,http://flags.fmcdn.net/data/flags/w580/br.png,201032714,Pays,Unité
+Brunei,http://flags.fmcdn.net/data/flags/w580/bn.png,393162,Pays,Unité
+Bulgarie,http://flags.fmcdn.net/data/flags/w580/bg.png,7282041,Pays,Unité
+Burkina Faso,http://flags.fmcdn.net/data/flags/h80/bf.png,17322796,Pays,Unité
+Burundi,http://flags.fmcdn.net/data/flags/w580/bi.png,10163000,Pays,Unité
+Cambodge,http://flags.fmcdn.net/data/flags/w580/kh.png,15135000,Pays,Unité
+Cameroun,http://flags.fmcdn.net/data/flags/w580/cm.png,20386799,Pays,Unité
+Canada,http://flags.fmcdn.net/data/flags/w580/ca.png,35295770,Pays,Unité
+Cap-Vert,http://flags.fmcdn.net/data/flags/w580/cv.png,491875,Pays,Unité
+Centrafrique,http://flags.fmcdn.net/data/flags/w580/cf.png,4616000,Pays,Unité
+Chili,http://flags.fmcdn.net/data/flags/w580/cl.png,16341929,Pays,Unité
+Chine,http://flags.fmcdn.net/data/flags/w580/cn.png,1363350000,Pays,Unité
+Chypre,http://flags.fmcdn.net/data/flags/w580/cy.png,865878,Pays,Unité
+Colombie,http://flags.fmcdn.net/data/flags/w580/co.png,47506000,Pays,Unité
+Comores,http://flags.fmcdn.net/data/flags/w580/km.png,743798,Pays,Unité
+Congo-Brazzaville / (Congo),http://flags.fmcdn.net/data/flags/w580/cg.png,4448000,Pays,Unité
+Congo-Kinshasa / (République démocratique du Congo),http://flags.fmcdn.net/data/flags/w580/cd.png,67514000,Pays,Unité
+Corée du Nord,http://flags.fmcdn.net/data/flags/w580/kp.png,24895000,Pays,Unité
+Corée du Sud,http://flags.fmcdn.net/data/flags/w580/kr.png,50219669,Pays,Unité
+Costa Rica,http://flags.fmcdn.net/data/flags/w580/cr.png,4667096,Pays,Unité
+Côte d'Ivoire,http://flags.fmcdn.net/data/flags/w580/ci.png,23202000,Pays,Unité
+Croatie,http://flags.fmcdn.net/data/flags/w580/hr.png,4290612,Pays,Unité
+Cuba,http://flags.fmcdn.net/data/flags/w580/cu.png,11167325,Pays,Unité
+Danemark,http://flags.fmcdn.net/data/flags/w580/dk.png,5627235,Pays,Unité
+Djibouti,http://flags.fmcdn.net/data/flags/w580/dj.png,873000,Pays,Unité
+Dominique,http://flags.fmcdn.net/data/flags/w580/dm.png,71293,Pays,Unité
+Égypte,http://flags.fmcdn.net/data/flags/h80/eg.png,86127000,Pays,Unité
+Émirats arabes unis,http://flags.fmcdn.net/data/flags/w580/ae.png,8264070,Pays,Unité
+Équateur,http://flags.fmcdn.net/data/flags/w580/ec.png,15699200,Pays,Unité
+Érythrée,http://flags.fmcdn.net/data/flags/w580/er.png,6333000,Pays,Unité
+Espagne,http://flags.fmcdn.net/data/flags/w580/es.png,46609700,Pays,Unité
+Estonie,http://flags.fmcdn.net/data/flags/w580/ee.png,1311870,Pays,Unité
+États-Unis,http://flags.fmcdn.net/data/flags/w580/us.png,317706000,Pays,Unité
+Éthiopie,http://flags.fmcdn.net/data/flags/w580/et.png,86613986,Pays,Unité
+Fidji,http://flags.fmcdn.net/data/flags/w580/fj.png,858038,Pays,Unité
+Finlande,http://flags.fmcdn.net/data/flags/w580/fi.png,5452821,Pays,Unité
 France,http://flags.fmcdn.net/data/flags/w580/fr.png,65844000,Pays,Unité
-Baguette,http://flags.fmcdn.net/data/flags/w580/fr.png,1,Aliments,Euro
+Gabon,http://flags.fmcdn.net/data/flags/w580/ga.png,1672000,Pays,Unité
+Gambie,http://flags.fmcdn.net/data/flags/w580/gm.png,1849000,Pays,Unité
+Géorgie,http://flags.fmcdn.net/data/flags/w580/ge.png,4483800,Pays,Unité
+Ghana,http://flags.fmcdn.net/data/flags/w580/gh.png,24658823,Pays,Unité
+Grèce,http://flags.fmcdn.net/data/flags/w580/gr.png,10815197,Pays,Unité
+Grenade,http://flags.fmcdn.net/data/flags/w580/gd.png,103328,Pays,Unité
+Guatemala,http://flags.fmcdn.net/data/flags/w580/gt.png,15806675,Pays,Unité
+Guinée,http://flags.fmcdn.net/data/flags/w580/gn.png,10824200,Pays,Unité
+Guinée équatoriale,http://flags.fmcdn.net/data/flags/w580/gq.png,736296,Pays,Unité
+Guinée-Bissau,http://flags.fmcdn.net/data/flags/w580/gw.png,1704000,Pays,Unité
+Guyana,http://flags.fmcdn.net/data/flags/w580/gy.png,784894,Pays,Unité
+Haïti,http://flags.fmcdn.net/data/flags/w580/ht.png,10413211,Pays,Unité
+Honduras,http://flags.fmcdn.net/data/flags/w580/hn.png,8555072,Pays,Unité
+Hongrie,http://flags.fmcdn.net/data/flags/w580/hu.png,9906000,Pays,Unité
+Îles Cook,http://flags.fmcdn.net/data/flags/w580/ck.png,14974,Pays,Unité
+Îles Salomon,http://flags.fmcdn.net/data/flags/w580/sb.png,581344,Pays,Unité
+Inde,http://flags.fmcdn.net/data/flags/w580/in.png,1241610000,Pays,Unité
+Indonésie,http://flags.fmcdn.net/data/flags/w580/id.png,249866000,Pays,Unité
+Irak,http://flags.fmcdn.net/data/flags/w580/iq.png,34035000,Pays,Unité
+Iran,http://flags.fmcdn.net/data/flags/w580/ir.png,77288000,Pays,Unité
+Irlande,http://flags.fmcdn.net/data/flags/w580/ie.png,4593100,Pays,Unité
+Islande,http://flags.fmcdn.net/data/flags/w580/is.png,325671,Pays,Unité
+Israël,http://flags.fmcdn.net/data/flags/w580/il.png,8146300,Pays,Unité
+Italie,http://flags.fmcdn.net/data/flags/w580/it.png,59943933,Pays,Unité
+Jamaïque,http://flags.fmcdn.net/data/flags/w580/jm.png,2711476,Pays,Unité
+Japon,http://flags.fmcdn.net/data/flags/w580/jp.png,127180000,Pays,Unité
+Jordanie,http://flags.fmcdn.net/data/flags/w580/jo.png,6558900,Pays,Unité
+Kazakhstan,http://flags.fmcdn.net/data/flags/w580/kz.png,17186000,Pays,Unité
+Kenya,http://flags.fmcdn.net/data/flags/w580/ke.png,44354000,Pays,Unité
+Kirghizistan,http://flags.fmcdn.net/data/flags/w580/kg.png,5663133,Pays,Unité
+Kiribati,http://flags.fmcdn.net/data/flags/w580/ki.png,106461,Pays,Unité
+Kosovo,http://flags.fmcdn.net/data/flags/w580/ks.png,1815606,Pays,Unité
+Koweït,http://flags.fmcdn.net/data/flags/w580/kw.png,3065850,Pays,Unité
+Laos,http://flags.fmcdn.net/data/flags/w580/la.png,6580800,Pays,Unité
+Lesotho,http://flags.fmcdn.net/data/flags/w580/ls.png,2074000,Pays,Unité
+Lettonie,http://flags.fmcdn.net/data/flags/w580/lv.png,2003900,Pays,Unité
+Liban,http://flags.fmcdn.net/data/flags/w580/lb.png,4822000,Pays,Unité
+Libéria,http://flags.fmcdn.net/data/flags/w580/lr.png,4294000,Pays,Unité
+Libye,http://flags.fmcdn.net/data/flags/w580/ly.png,6202000,Pays,Unité
+Liechtenstein,http://flags.fmcdn.net/data/flags/w580/li.png,37132,Pays,Unité
+Lituanie,http://flags.fmcdn.net/data/flags/w580/lt.png,2941953,Pays,Unité
+Luxembourg,http://flags.fmcdn.net/data/flags/w580/lu.png,537000,Pays,Unité
+Macédoine,http://flags.fmcdn.net/data/flags/w580/mk.png,2062294,Pays,Unité
+Madagascar,http://flags.fmcdn.net/data/flags/w580/mg.png,21263403,Pays,Unité
+Malaisie,http://flags.fmcdn.net/data/flags/w580/my.png,30041000,Pays,Unité
+Malawi,http://flags.fmcdn.net/data/flags/w580/mw.png,16363000,Pays,Unité
+Maldives,http://flags.fmcdn.net/data/flags/w580/mv.png,317280,Pays,Unité
+Mali,http://flags.fmcdn.net/data/flags/w580/ml.png,15302000,Pays,Unité
+Malte,http://flags.fmcdn.net/data/flags/w580/mt.png,416055,Pays,Unité
+Maroc,http://flags.fmcdn.net/data/flags/w580/ma.png,33202300,Pays,Unité
+Marshall,http://flags.fmcdn.net/data/flags/w580/mh.png,56086,Pays,Unité
+Maurice,http://flags.fmcdn.net/data/flags/w580/mu.png,1257900,Pays,Unité
+Mauritanie,http://flags.fmcdn.net/data/flags/w580/mr.png,3461041,Pays,Unité
+Mexique,http://flags.fmcdn.net/data/flags/w580/mx.png,119713203,Pays,Unité
+Micronésie,http://flags.fmcdn.net/data/flags/w580/fm.png,101351,Pays,Unité
+Moldavie,http://flags.fmcdn.net/data/flags/w580/md.png,3559500,Pays,Unité
+Monaco,http://flags.fmcdn.net/data/flags/w580/mc.png,36136,Pays,Unité
+Mongolie,http://flags.fmcdn.net/data/flags/w580/mn.png,2931300,Pays,Unité
+Monténégro,http://flags.fmcdn.net/data/flags/w580/me.png,620029,Pays,Unité
+Mozambique,http://flags.fmcdn.net/data/flags/w580/mz.png,23700715,Pays,Unité
+Namibie,http://flags.fmcdn.net/data/flags/w580/na.png,2113077,Pays,Unité
+Nauru,http://flags.fmcdn.net/data/flags/w580/nr.png,9945,Pays,Unité
+Népal,http://flags.fmcdn.net/data/flags/w580/np.png,26494504,Pays,Unité
+Nicaragua,http://flags.fmcdn.net/data/flags/w580/ni.png,6071045,Pays,Unité
+Niger,http://flags.fmcdn.net/data/flags/w580/ne.png,17129076,Pays,Unité
+Nigeria,http://flags.fmcdn.net/data/flags/w580/ng.png,173615000,Pays,Unité
+Niue,http://flags.fmcdn.net/data/flags/w580/nu.png,1611,Pays,Unité
+Norvège,http://flags.fmcdn.net/data/flags/w580/no.png,5109056,Pays,Unité
+Nouvelle-Zélande,http://flags.fmcdn.net/data/flags/w580/nz.png,4518330,Pays,Unité
+Oman,http://flags.fmcdn.net/data/flags/w580/om.png,3957000,Pays,Unité
+Ouganda,http://flags.fmcdn.net/data/flags/w580/ug.png,35357000,Pays,Unité
+Ouzbékistan,http://flags.fmcdn.net/data/flags/w580/uz.png,30183400,Pays,Unité
+Pakistan,http://flags.fmcdn.net/data/flags/w580/pk.png,185914000,Pays,Unité
+Palaos,http://flags.fmcdn.net/data/flags/w580/pw.png,20901,Pays,Unité
+Panamá,http://flags.fmcdn.net/data/flags/w580/pa.png,3405813,Pays,Unité
+Papouasie-Nouvelle-Guinée,http://flags.fmcdn.net/data/flags/w580/pg.png,7398500,Pays,Unité
+Paraguay,http://flags.fmcdn.net/data/flags/w580/py.png,6783374,Pays,Unité
+Pays-Bas,http://flags.fmcdn.net/data/flags/w580/nl.png,16842200,Pays,Unité
+Pérou,http://flags.fmcdn.net/data/flags/w580/pe.png,30475144,Pays,Unité
+Philippines,http://flags.fmcdn.net/data/flags/w580/ph.png,99275100,Pays,Unité
+Pologne,http://flags.fmcdn.net/data/flags/w580/pl.png,38502396,Pays,Unité
+Portugal,http://flags.fmcdn.net/data/flags/w580/pt.png,10487289,Pays,Unité
+Qatar,http://flags.fmcdn.net/data/flags/w580/qa.png,2045239,Pays,Unité
+République dominicaine,http://flags.fmcdn.net/data/flags/w580/do.png,9445281,Pays,Unité
+République tchèque,http://flags.fmcdn.net/data/flags/w580/cz.png,10513800,Pays,Unité
+Roumanie,http://flags.fmcdn.net/data/flags/w580/ro.png,20121641,Pays,Unité
+Royaume-Uni,http://flags.fmcdn.net/data/flags/w580/gb.png,63705000,Pays,Unité
+Russie,http://flags.fmcdn.net/data/flags/w580/ru.png,143700000,Pays,Unité
+Rwanda,http://flags.fmcdn.net/data/flags/w580/rw.png,10537222,Pays,Unité
+Sahara occidental,http://flags.fmcdn.net/data/flags/w580/eh.png,567000,Pays,Unité
+Saint-Christophe-et-Niévès,http://flags.fmcdn.net/data/flags/w580/kn.png,54000,Pays,Unité
+Saint-Marin,http://flags.fmcdn.net/data/flags/w580/sm.png,33540,Pays,Unité
+Saint-Vincent-et-les Grenadines,http://flags.fmcdn.net/data/flags/w580/vc.png,109000,Pays,Unité
+Sainte-Lucie,http://flags.fmcdn.net/data/flags/w580/lc.png,180000,Pays,Unité
+Salvador,http://flags.fmcdn.net/data/flags/w580/sv.png,6340000,Pays,Unité
+Samoa,http://flags.fmcdn.net/data/flags/w580/ws.png,187820,Pays,Unité
+São Tomé-et-Principe,http://flags.fmcdn.net/data/flags/w580/st.png,187356,Pays,Unité
+Sénégal,http://flags.fmcdn.net/data/flags/w580/sn.png,13567338,Pays,Unité
+Serbie,http://flags.fmcdn.net/data/flags/w580/rs.png,7181505,Pays,Unité
+Seychelles,http://flags.fmcdn.net/data/flags/w580/sc.png,90945,Pays,Unité
+Sierra Leone,http://flags.fmcdn.net/data/flags/w580/sl.png,6190280,Pays,Unité
+Singapour,http://flags.fmcdn.net/data/flags/w580/sg.png,5399200,Pays,Unité
+Slovaquie,http://flags.fmcdn.net/data/flags/w580/sk.png,5415949,Pays,Unité
+Slovénie,http://flags.fmcdn.net/data/flags/w580/si.png,2061963,Pays,Unité
+Somalie,http://flags.fmcdn.net/data/flags/w580/so.png,10496000,Pays,Unité
+Soudan,http://flags.fmcdn.net/data/flags/w580/sd.png,37964000,Pays,Unité
+Soudan du Sud,http://flags.fmcdn.net/data/flags/w580/ss.png,10625176,Pays,Unité
+Sri Lanka,http://flags.fmcdn.net/data/flags/w580/lk.png,20277597,Pays,Unité
+Suède,http://flags.fmcdn.net/data/flags/w580/se.png,9651531,Pays,Unité
+Suisse,http://flags.fmcdn.net/data/flags/w580/ch.png,8112200,Pays,Unité
+Suriname,http://flags.fmcdn.net/data/flags/w580/sr.png,534189,Pays,Unité
+Swaziland,http://flags.fmcdn.net/data/flags/w580/sz.png,1250000,Pays,Unité
+Syrie,http://flags.fmcdn.net/data/flags/w580/sy.png,21898000,Pays,Unité
+Tadjikistan,http://flags.fmcdn.net/data/flags/w580/tj.png,8160000,Pays,Unité
+Taiwan / (République de Chine),http://flags.fmcdn.net/data/flags/w580/tw.png,23379129,Pays,Unité
+Tanzanie,http://flags.fmcdn.net/data/flags/w580/tz.png,44928923,Pays,Unité
+Tchad,http://flags.fmcdn.net/data/flags/w580/td.png,12825000,Pays,Unité
+Thaïlande,http://flags.fmcdn.net/data/flags/w580/th.png,65926261,Pays,Unité
+Timor oriental,http://flags.fmcdn.net/data/flags/w580/tl.png,1066409,Pays,Unité
+Togo,http://flags.fmcdn.net/data/flags/w580/tg.png,6191155,Pays,Unité
+Tonga,http://flags.fmcdn.net/data/flags/w580/to.png,103036,Pays,Unité
+Trinité-et-Tobago,http://flags.fmcdn.net/data/flags/w580/tt.png,1328019,Pays,Unité
+Tunisie,http://flags.fmcdn.net/data/flags/w580/tn.png,10886500,Pays,Unité
+Turkménistan,http://flags.fmcdn.net/data/flags/w580/tm.png,5240000,Pays,Unité
+Turquie,http://flags.fmcdn.net/data/flags/w580/tr.png,76667864,Pays,Unité
+Tuvalu,http://flags.fmcdn.net/data/flags/w580/tv.png,11323,Pays,Unité
+Ukraine,http://flags.fmcdn.net/data/flags/w580/ua.png,45426200,Pays,Unité
+Uruguay,http://flags.fmcdn.net/data/flags/w580/uy.png,3286314,Pays,Unité
+Vanuatu,http://flags.fmcdn.net/data/flags/w580/vu.png,264652,Pays,Unité
+Vatican / (Saint-Siège),http://flags.fmcdn.net/data/flags/w580/va.png,839,Pays,Unité
+Venezuela,http://flags.fmcdn.net/data/flags/w580/ve.png,28946101,Pays,Unité
+Viêt Nam,http://flags.fmcdn.net/data/flags/w580/vn.png,89708900,Pays,Unité
+Yémen,http://flags.fmcdn.net/data/flags/w580/ye.png,25235000,Pays,Unité
+Zambie,http://flags.fmcdn.net/data/flags/w580/zm.png,14580290,Pays,Unité
+Zimbabwe,http://flags.fmcdn.net/data/flags/w580/zw.png,12973808,Pays,Unité
