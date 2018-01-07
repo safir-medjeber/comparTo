@@ -9,28 +9,29 @@ const POSITION_2 = 2;
 @Injectable()
 export class GameRulesService{
 
+  private numberQuestion: number;
+  private currentTypeQuestion: TypeQuestion = TypeQuestion.THE_MOST;
 
   constructor() {
   }
 
   public getFirstQuestion(itemsByThematic: Item[]): Question{
+    this.numberQuestion = 0;
     let proposition1: Item = this.chooseNewCandidate(undefined, itemsByThematic);
     let proposition2: Item = this.chooseNewCandidate(proposition1, itemsByThematic);
-    return new Question(TypeQuestion.PLUS, "wording", proposition1, proposition2);
+    return new Question(this.determineTypeQuestion(), this.determineLabelQuestion(), proposition1, proposition2);
   }
 
 
   public getNextQuestion(itemsByThematic:Item[], playerAnswer: Item, idPositionAnswer: number): Question{
-
     let proposition1: Item = (idPositionAnswer == POSITION_1) ? playerAnswer : this.chooseNewCandidate(playerAnswer, itemsByThematic) ;
     let proposition2: Item = (idPositionAnswer == POSITION_2) ? playerAnswer : this.chooseNewCandidate(playerAnswer, itemsByThematic) ;
+    return new Question(this.determineTypeQuestion(), this.determineLabelQuestion(), proposition1, proposition2);
+  }
 
-    return new Question(TypeQuestion.PLUS, "wording", proposition1, proposition2);
-    }
 
-
-  public isTheGoodAnswer(playerAnswer: Item, canditate1: Item, candidate2: Item): boolean{
-    return this.determineAnswer(TypeQuestion.PLUS, canditate1, candidate2) == playerAnswer.value;
+  public isTheGoodAnswer(playerAnswer: Item, question: Question): boolean{
+    return question.answer == playerAnswer.value;
   }
 
 
@@ -38,13 +39,20 @@ export class GameRulesService{
     return score +1 ;
   }
 
-
-
-  private determineAnswer(typeQuestion: TypeQuestion, candidate1: Item, candidate2: Item): number {
-    return (typeQuestion === TypeQuestion.PLUS) ?
-      Math.max(candidate1.value, candidate2.value) : Math.min(candidate1.value, candidate2.value);
+  private determineLabelQuestion(): string {
+    return (this.currentTypeQuestion === TypeQuestion.THE_MOST) ?
+      "Quel est le pays le PLUS peuplé ?" : "Quel est le pays le MOINS Peuplé ?";
   }
 
+  private determineTypeQuestion(): TypeQuestion{
+    this.numberQuestion= this.numberQuestion+1;
+    this.currentTypeQuestion = (this.numberQuestion % 5 == 0) ? this.changeTypeQuestion() : this.currentTypeQuestion;
+    return this.currentTypeQuestion;
+  }
+
+  private changeTypeQuestion(): TypeQuestion{
+    return (this.currentTypeQuestion==TypeQuestion.THE_MOST) ? TypeQuestion.THE_LEAST : TypeQuestion.THE_MOST;
+  }
 
   private chooseNewCandidate(previousCandidate: Item, itemsByThematic: Item[]):Item {
     let indexCandidate: number = this.getRandomInt(0, itemsByThematic.length-1);
@@ -57,8 +65,8 @@ export class GameRulesService{
   }
 
 
-  private isTheSameCandidate(candidate1:Item, candidate2: Item): boolean{
-    return candidate1.name === candidate2.name;
+  private isTheSameCandidate(propositione1:Item, propositione2: Item): boolean{
+    return propositione1.name === propositione2.name;
   }
 
   private  getRandomInt(min, max): number {

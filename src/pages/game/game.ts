@@ -15,10 +15,8 @@ import {GameRulesService} from "../../services/gameRules.service";
 export class GamePage implements OnInit {
 
   private itemsByThematic: Item[];
-  private thematicSelected: string;
+  private currentQuestion: Question;
 
-  private proposition1: Item;
-  private proposition2: Item;
   private score: number = 0;
   private handleTimeout: number ;
 
@@ -39,11 +37,10 @@ export class GamePage implements OnInit {
     this.navCtrl.push('GameEndPage', {scoreParam: this.score, thematicParam: this.itemsByThematic});
   }
 
-  public playerResponse(playerAnswer: Item, idPositionAnswer: number){
-    console.log(playerAnswer);
+  public playerAnswer(playerAnswer: Item, idPositionAnswer: number){
     clearTimeout(this.handleTimeout);
-    if(this.gameRulesService.isTheGoodAnswer(playerAnswer, this.proposition1, this.proposition2)){
-      this.updateView(this.gameRulesService.getNextQuestion(this.itemsByThematic, playerAnswer, idPositionAnswer),this.gameRulesService.updateScore(this.score));
+    if(this.gameRulesService.isTheGoodAnswer(playerAnswer, this.currentQuestion)){
+      this.updateView(this.gameRulesService.getNextQuestion(this.itemsByThematic, playerAnswer, idPositionAnswer), this.gameRulesService.updateScore(this.score));
       this.timer(5000);
     }
     else{
@@ -58,10 +55,16 @@ export class GamePage implements OnInit {
   }
 
   private updateView(question: Question, score: number): void{
-    this.proposition1 = question.getProposition1();
-    this.proposition2 = question.getProposition2();
     this.score = score;
+    this.currentQuestion = question;
+    console.log(this.currentQuestion.proposition1.value);
+    console.log(this.currentQuestion.proposition2.value);
   }
 
+
+  private debug(): void{
+    console.log(this.currentQuestion.proposition1.value);
+    console.log(this.currentQuestion.proposition2.value);
+  }
 
 }

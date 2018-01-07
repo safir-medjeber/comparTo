@@ -1,10 +1,12 @@
 import {Item} from "./Item";
 
 export class Question {
-  private typeQuestion: TypeQuestion;
-  private question: string;
-  private proposition1: Item;
-  private proposition2: Item;
+
+  public readonly typeQuestion: TypeQuestion;
+  public readonly question: string;
+  public readonly proposition1: Item;
+  public readonly proposition2: Item;
+  public readonly answer: number;
 
 
   constructor(typeQuestion: TypeQuestion, question: string, proposition1: Item, proposition2: Item) {
@@ -12,43 +14,16 @@ export class Question {
     this.question = question;
     this.proposition1 = proposition1;
     this.proposition2 = proposition2;
+    this.answer = this.determineAnswer(typeQuestion, proposition1, proposition2);
   }
 
-
-  public getTypeQuestion(): TypeQuestion {
-    return this.typeQuestion;
-  }
-
-  public setTypeQuestion(value: TypeQuestion) {
-    this.typeQuestion = value;
-  }
-
- public getQuestion(): string {
-    return this.question;
-  }
-
-  public setQuestion(value: string) {
-    this.question = value;
-  }
-
-  public getProposition1(): Item {
-    return this.proposition1;
-  }
-
-  public setProposition1(value: Item) {
-    this.proposition1 = value;
-  }
-
-  public getProposition2(): Item {
-    return this.proposition2;
-  }
-
-  public setProposition2(value: Item) {
-    this.proposition2 = value;
+  private determineAnswer(typeQuestion: TypeQuestion, proposition1: Item, proposition2: Item): number {
+    return (typeQuestion === TypeQuestion.THE_MOST) ?
+      Math.max(proposition1.value, proposition2.value) : Math.min(proposition1.value, proposition2.value);
   }
 }
 
 export enum TypeQuestion {
-  PLUS = 0,
-  MOINS = 1
+  THE_MOST = 0,
+  THE_LEAST = 1
 }
