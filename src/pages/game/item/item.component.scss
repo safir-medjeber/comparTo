@@ -1,0 +1,52 @@
+@mixin absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.item {
+  height: 100%;
+
+  .background {
+    @include absolute;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+
+    &:after {
+      content: "";
+      @include absolute;
+      background-color: rgba(0, 0, 0, .75);
+    }
+
+    &.blur {
+      filter: blur(5px);
+    }
+  }
+
+  .content {
+    @include absolute;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    .image {
+      max-width: 33%;
+      max-height: 28%;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+
+    .name {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  }
+}

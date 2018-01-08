@@ -5,30 +5,29 @@ import {MOCK_ITEMS} from "../../services/mock-items";
 import {Question} from "../../model/Question";
 import {GameRulesService} from "../../services/gameRules.service";
 
-
 @IonicPage()
 @Component({
   selector: 'page-game',
   templateUrl: 'game.html'
 })
 
-export class GamePage implements OnInit {
+export class GamePage {
+  public itemsByThematic: Item[];
+  public currentQuestion: Question;
 
-  private itemsByThematic: Item[];
-  private currentQuestion: Question;
-
-  private score: number = 0;
-  private handleTimeout: number ;
+  public score: number = 0;
+  public handleTimeout: number ;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public gameRulesService: GameRulesService) {
     // this.itemsByThematic = this.navParams.get('thematicParam');
     this.itemsByThematic = MOCK_ITEMS;
+    this.updateView(this.gameRulesService.getFirstQuestion(this.itemsByThematic), 0);
+    console.log("Question: ");
+    console.log(this.currentQuestion);
+    console.log("?");
   }
 
-  ngOnInit() {
-    this.updateView(this.gameRulesService.getFirstQuestion(this.itemsByThematic), 0);
-  }
 
   goToGameOptionsPage(){
     this.navCtrl.push('GameOptionsPage',);
@@ -57,14 +56,6 @@ export class GamePage implements OnInit {
   private updateView(question: Question, score: number): void{
     this.score = score;
     this.currentQuestion = question;
-    console.log(this.currentQuestion.proposition1.value);
-    console.log(this.currentQuestion.proposition2.value);
-  }
-
-
-  private debug(): void{
-    console.log(this.currentQuestion.proposition1.value);
-    console.log(this.currentQuestion.proposition2.value);
   }
 
 }
