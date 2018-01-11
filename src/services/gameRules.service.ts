@@ -1,79 +1,82 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Item} from "../model/Item";
-import {Question, TypeQuestion} from "../model/Question";
-
-
-const POSITION_1 = 1;
-const POSITION_2 = 2;
+import {Question, WhoIsHigher} from "../model/Question";
 
 @Injectable()
-export class GameRulesService{
+export class GameRulesService {
+  private state: GameState;
+  private timeout: number;
+  private score: number;
 
-  private numberQuestion: number;
-  private currentTypeQuestion: TypeQuestion = TypeQuestion.THE_MOST;
+  private question: Question;
+
+  readonly timer: number = 5000;
+  readonly emitter: EventEmitter<GameState>;
 
   constructor() {
+    this.emitter = new EventEmitter();
   }
 
-  public getFirstQuestion(itemsByThematic: Item[]): Question{
-    this.numberQuestion = 0;
-    let proposition1: Item = this.chooseNewCandidate(undefined, itemsByThematic);
-    let proposition2: Item = this.chooseNewCandidate(proposition1, itemsByThematic);
-    return new Question(this.determineTypeQuestion(), this.determineLabelQuestion(), proposition1, proposition2);
+  start() {
+    this.setState(GameState.CanQuestion);
   }
 
+  public getQuestion(itemsByThematic: Item[]): Question {
+    if(this.state == GameState.CanQuestion) {
+      let {itemA, itemB} = this.chooseNewCandidates(itemsByThematic);
+      this.setState(GameState.Questioning);
+      this.question = new WhoIsHigher(itemA, itemB);
+      this.timeout = this.setTimer();
 
-  public getNextQuestion(itemsByThematic:Item[], playerAnswer: Item, idPositionAnswer: number): Question{
-    let proposition1: Item = (idPositionAnswer == POSITION_1) ? playerAnswer : this.chooseNewCandidate(playerAnswer, itemsByThematic) ;
-    let proposition2: Item = (idPositionAnswer == POSITION_2) ? playerAnswer : this.chooseNewCandidate(playerAnswer, itemsByThematic) ;
-    return new Question(this.determineTypeQuestion(), this.determineLabelQuestion(), proposition1, proposition2);
-  }
-
-
-  public isTheGoodAnswer(playerAnswer: Item, question: Question): boolean{
-    return question.answer == playerAnswer.value;
-  }
-
-
-  public updateScore(score: number): number{
-    return score +1 ;
-  }
-
-  private determineLabelQuestion(): string {
-    return (this.currentTypeQuestion === TypeQuestion.THE_MOST) ?
-      "Quel est le pays le PLUS peuplé ?" : "Quel est le pays le MOINS Peuplé ?";
-  }
-
-  private determineTypeQuestion(): TypeQuestion{
-    this.numberQuestion= this.numberQuestion+1;
-    this.currentTypeQuestion = (this.numberQuestion % 5 == 0) ? this.changeTypeQuestion() : this.currentTypeQuestion;
-    return this.currentTypeQuestion;
-  }
-
-  private changeTypeQuestion(): TypeQuestion{
-    return (this.currentTypeQuestion==TypeQuestion.THE_MOST) ? TypeQuestion.THE_LEAST : TypeQuestion.THE_MOST;
-  }
-
-  private chooseNewCandidate(previousCandidate: Item, itemsByThematic: Item[]):Item {
-    let indexCandidate: number = this.getRandomInt(0, itemsByThematic.length-1);
-    if(previousCandidate){
-      while( this.isTheSameCandidate(previousCandidate, itemsByThematic[indexCandidate])){
-        indexCandidate = this.getRandomInt(0, itemsByThematic.length);
-      }
+      return this.question;
     }
-    return itemsByThematic[indexCandidate];
   }
 
-
-  private isTheSameCandidate(propositione1:Item, propositione2: Item): boolean{
-    return propositione1.name === propositione2.name;
+  private chooseNewCandidates(items: Item[]) {
+    const i = this.getRandomInt(0, items.length - 1);
+    const j = this.getRandomInt(1, items.length - 1);
+    [items[0], items[i]] = [items[i], items[0]];
+    [items[1], items[j]] = [items[j], items[1]];
+    return {itemA: items[0], itemB: items[1]};
   }
 
-  private  getRandomInt(min, max): number {
+  public replyA() { this.playerAnswer(this.question.replyA()) }
+  public replyB() { this.playerAnswer(this.question.replyB()) }
+
+  private playerAnswer(correct: boolean) {
+    clearTimeout(this.timeout);
+    if (this.state == GameState.Questioning && correct) {
+      this.score += 1;
+      this.setState(GameState.CanQuestion);
+    }
+    else {
+      this.setState(GameState.GameOver);
+    }
+  }
+
+  private getRandomInt(min, max): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  private setState(state: GameState) {
+    this.state = state;
+    this.emitter.emit(this.state);
+  }
 
+  private setTimer() {
+    return setTimeout(() => {
+      if (this.state == GameState.Questioning)
+        this.setState(GameState.GameOver)
+    }, this.timer);
+  }
 
+  getScore() {
+    return this.score;
+  }
+}
 
+export enum GameState {
+  CanQuestion,
+  Questioning,
+  GameOver
 }

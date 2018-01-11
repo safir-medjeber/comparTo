@@ -1,12 +1,25 @@
 .page-game {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-flow: column;
+
   item {
-    flex: 1;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+
+    &.item-1 {
+      top: 0;
+    }
+    &.item-2 {
+      top: 50%;
+    }
+  }
+
+  water-bubble {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    z-index: 50;
+
   }
 }

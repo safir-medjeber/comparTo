@@ -1,8 +1,8 @@
 <ion-content>
   <div class="score">{{score}}</div>
   <div class="page-game">
-    <item class="item-1" [item]="currentQuestion.proposition1" (click)="playerAnswer(this.currentQuestion.proposition1, 1)"></item>
-    <question [question]="currentQuestion"></question>
-    <item class="item-2" [item]="currentQuestion.proposition2" (click)="playerAnswer(this.currentQuestion.proposition2, 2)"></item>
+    <item class="item-1" [showValue]="animating" [item]="currentQuestion?.proposition1" (click)="game.replyA()"></item>
+    <water-bubble [reset]="animating"></water-bubble>
+    <item class="item-2" [showValue]="animating" [item]="currentQuestion?.proposition2" (click)="game.replyB()"></item>
   </div>
 </ion-content>

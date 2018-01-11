@@ -10,10 +10,11 @@ import {Item} from "../../../model/Item";
       <div class="content">
         <img class="image" [alt]="item.name" [src]="item.url" />
         <div class="name">{{item.name}}</div>
-        <div><animated-counter [value]="item.value"></animated-counter></div>
+        <div *ngIf="showValue"><animated-counter [value]="item.value"></animated-counter></div>
       </div>
     </div>
   `
 }) export class ItemComponent {
   @Input() item: Item;
+  @Input() showValue: boolean;
 }
