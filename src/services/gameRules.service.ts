@@ -53,13 +53,15 @@ export class GameRulesService {
   public replyB() { this.playerAnswer(this.question.replyB()) }
 
   private playerAnswer(correct: boolean) {
-    clearTimeout(this.timeout);
-    if (this.state == GameState.Questioning && correct) {
-      this.score += 1;
-      this.setState(GameState.CanQuestion);
-    }
-    else {
-      this.setState(GameState.GameOver);
+    if (this.state == GameState.Questioning) {
+      clearTimeout(this.timeout);
+      if (correct) {
+        this.score += 1;
+        this.setState(GameState.CanQuestion);
+      }
+      else {
+        this.setState(GameState.GameOver);
+      }
     }
   }
 

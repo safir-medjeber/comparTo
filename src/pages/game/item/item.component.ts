@@ -13,8 +13,8 @@ import {transition, trigger, style, animate, keyframes, query, animateChild, gro
       <div class="content">
         <img class="image" [alt]="item.name" [src]="item.url" [@image]="state"/>
         <div class="name">{{item.name}}</div>
-        <div *ngIf="showValue">
-          <animated-counter [value]="item.value"></animated-counter>
+        <div class="value">
+          <animated-counter *ngIf="showValue" [value]="item.value"></animated-counter>
         </div>
       </div>
     </div>
