@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
-import {Item} from "../../model/Item";
 import {MOCK_ITEMS} from "../../services/mock-items";
 import {Question} from "../../model/Question";
 import {GameRulesService, GameState} from "../../services/gameRules.service";
@@ -12,17 +11,19 @@ import {GameRulesService, GameState} from "../../services/gameRules.service";
 })
 
 export class GamePage {
-  public itemsByThematic: Item[];
   public currentQuestion: Question;
+  public lastQuestion?: Question;
+
   public score: number = 0;
 
-  public animating: boolean;
+  public animating: boolean = true;
+  public percentage: number = 0;
+  private percentageInterval: number;
 
   private game: GameRulesService;
 
   constructor(public navCtrl: NavController) {
-    this.itemsByThematic = MOCK_ITEMS;
-    this.game = new GameRulesService();
+    this.game = new GameRulesService(MOCK_ITEMS);
     this.game.emitter.subscribe(this.handler);
     this.game.start();
   }
@@ -31,8 +32,18 @@ export class GamePage {
     switch (event) {
       case GameState.CanQuestion:
         this.score = this.game.getScore();
-        this.animate();
-        this.currentQuestion = this.game.getQuestion(this.itemsByThematic);
+        clearInterval(this.percentageInterval);
+        this.percentage = 0;
+        if(this.score == 0) {
+          this.getQuestion();
+        } else {
+          this.animate();
+          setTimeout(() => {
+            this.reset();
+            this.lastQuestion = this.currentQuestion;
+            this.getQuestion()
+          }, 2000)
+        }
         break;
       case GameState.Questioning:
         this.reset();
@@ -41,6 +52,11 @@ export class GamePage {
         this.goToGameEndPage();
         break;
     }
+  }
+
+  getQuestion(): any {
+    this.currentQuestion = this.game.getQuestion();
+    this.percentageInterval = setInterval(() => this.percentage += 1, this.game.timer / 100);
   }
 
   animate(): any {
@@ -52,7 +68,7 @@ export class GamePage {
   }
 
   goToGameEndPage() {
-    this.navCtrl.push('GameEndPage', {scoreParam: this.score, thematicParam: this.itemsByThematic});
+    this.navCtrl.push('GameEndPage', {scoreParam: this.score});
   }
 
 }

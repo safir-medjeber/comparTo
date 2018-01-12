@@ -2,34 +2,43 @@ import {EventEmitter, Injectable} from '@angular/core';
 import {Item} from "../model/Item";
 import {Question, WhoIsHigher} from "../model/Question";
 
-@Injectable()
 export class GameRulesService {
   private state: GameState;
   private timeout: number;
   private score: number;
 
   private question: Question;
+  private nextQuestion: Question;
 
-  readonly timer: number = 5000;
+  readonly timer: number = 8000;
   readonly emitter: EventEmitter<GameState>;
 
-  constructor() {
+  constructor(private items: Item[]) {
     this.emitter = new EventEmitter();
+    this.nextQuestion = this.pick();
   }
 
   start() {
+    this.score = 0;
     this.setState(GameState.CanQuestion);
   }
 
-  public getQuestion(itemsByThematic: Item[]): Question {
+  public getQuestion(): Question {
     if(this.state == GameState.CanQuestion) {
-      let {itemA, itemB} = this.chooseNewCandidates(itemsByThematic);
-      this.setState(GameState.Questioning);
-      this.question = new WhoIsHigher(itemA, itemB);
       this.timeout = this.setTimer();
-
+      this.question = this.nextQuestion;
+      this.nextQuestion = this.pick();
       return this.question;
     }
+  }
+
+  private pick(): Question {
+    let {itemA, itemB} = this.chooseNewCandidates(this.items);
+    this.setState(GameState.Questioning);
+    // preload images
+    new Image().src = itemA.url;
+    new Image().src = itemB.url;
+    return new WhoIsHigher(itemA, itemB);
   }
 
   private chooseNewCandidates(items: Item[]) {
