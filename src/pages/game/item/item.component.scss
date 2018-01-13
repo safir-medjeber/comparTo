@@ -9,20 +9,24 @@
 .item {
   height: 100%;
 
-  .background {
+  .background-wrapper {
     @include absolute;
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: center;
 
-    &:after {
-      content: "";
+    .background {
       @include absolute;
-      background-color: rgba(0, 0, 0, .75);
-    }
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: center;
 
-    &.blur {
-      filter: blur(5px);
+      &:after {
+        content: "";
+        @include absolute;
+        background-color: rgba(0, 0, 0, .5);
+      }
+
+      &.blur {
+        filter: blur(8px);
+      }
     }
   }
 
@@ -40,6 +44,11 @@
       max-height: 28%;
       margin-bottom: 1rem;
       border-radius: 5px;
+
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+
     }
 
     .name {
@@ -47,6 +56,33 @@
       font-weight: 600;
       margin-bottom: 1rem;
       text-align: center;
+    }
+
+    .value {
+      font-size: 22px;
+      line-height: 22px;
+      height: 27px;
+    }
+  }
+
+  &.leaving {
+    .background {
+      animation: fade-in 1s reverse;
+    }
+  }
+
+  &.incoming {
+    .background {
+      animation: fade-in 1s;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0
+    }
+    to {
+      opacity: 1
     }
   }
 }

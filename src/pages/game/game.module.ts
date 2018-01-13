@@ -3,14 +3,14 @@ import {IonicPageModule} from "ionic-angular";
 import {GamePage} from "./game";
 
 import {ItemComponent} from "./item/item.component";
-import {QuestionComponent} from "./question/question.component";
 import {CounterComponent} from "../../components/counter.component";
+import {WaterBubbleComponent} from "./water-bubble/water-bubble.component";
 
 @NgModule({
   declarations: [
     GamePage,
     ItemComponent,
-    QuestionComponent,
+    WaterBubbleComponent,
     CounterComponent
   ],
   imports: [

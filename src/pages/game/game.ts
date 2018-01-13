@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {Item} from "../../model/Item";
+import {Component} from '@angular/core';
+import {IonicPage, NavController, ViewController} from 'ionic-angular';
 import {MOCK_ITEMS} from "../../services/mock-items";
 import {Question} from "../../model/Question";
-import {GameRulesService} from "../../services/gameRules.service";
+import {GameRulesService, GameState} from "../../services/gameRules.service";
 
 @IonicPage()
 @Component({
@@ -12,50 +11,70 @@ import {GameRulesService} from "../../services/gameRules.service";
 })
 
 export class GamePage {
-  public itemsByThematic: Item[];
   public currentQuestion: Question;
+  public lastQuestion?: Question;
 
   public score: number = 0;
-  public handleTimeout: number ;
 
+  public animating: boolean;
+  public percentage: number = 0;
+  private percentageInterval: number;
+  private gameOver: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public gameRulesService: GameRulesService) {
-    // this.itemsByThematic = this.navParams.get('thematicParam');
-    this.itemsByThematic = MOCK_ITEMS;
-    this.updateView(this.gameRulesService.getFirstQuestion(this.itemsByThematic), 0);
-    console.log("Question: ");
-    console.log(this.currentQuestion);
-    console.log("?");
+  private game: GameRulesService;
+
+  constructor(private navCtrl: NavController, private viewCtrl: ViewController) {
+    this.game = new GameRulesService(MOCK_ITEMS);
+    this.game.emitter.subscribe(this.handler);
+    this.game.start();
   }
 
-
-  goToGameOptionsPage(){
-    this.navCtrl.push('GameOptionsPage',);
-  }
-  goToGameEndPage(){
-    this.navCtrl.push('GameEndPage', {scoreParam: this.score, thematicParam: this.itemsByThematic});
-  }
-
-  public playerAnswer(playerAnswer: Item, idPositionAnswer: number){
-    clearTimeout(this.handleTimeout);
-    if(this.gameRulesService.isTheGoodAnswer(playerAnswer, this.currentQuestion)){
-      this.updateView(this.gameRulesService.getNextQuestion(this.itemsByThematic, playerAnswer, idPositionAnswer), this.gameRulesService.updateScore(this.score));
-      this.timer(5000);
+  handler = (event: GameState) => {
+    switch (event) {
+      case GameState.CanQuestion:
+        this.score = this.game.getScore();
+        if(this.score == 0) {
+          this.getQuestion();
+        } else {
+          this.animate();
+          setTimeout(() => {
+            this.reset();
+            this.lastQuestion = this.currentQuestion;
+            this.getQuestion()
+          }, 2000)
+        }
+        break;
+      case GameState.Questioning:
+        this.reset();
+        break;
+      case GameState.GameOver:
+        this.animate();
+        this.gameOver = true;
+        setTimeout(() => {
+          this.goToGameEndPage();
+        }, 2000)
+        break;
     }
-    else{
-      this.goToGameEndPage();
-    }
   }
 
-  private timer(timeToAnswer: number): void {
-    this.handleTimeout = setTimeout(() => {
-      this.goToGameEndPage();
-    }, timeToAnswer);
+  getQuestion(): any {
+    this.currentQuestion = this.game.getQuestion();
+    this.percentageInterval = setInterval(() => this.percentage += 1, this.game.timer / 100);
   }
 
-  private updateView(question: Question, score: number): void{
-    this.score = score;
-    this.currentQuestion = question;
+  animate(): any {
+    clearInterval(this.percentageInterval);
+    this.percentage = 0;
+    this.animating = true;
+  }
+
+  reset(): any {
+    this.animating = false;
+  }
+
+  goToGameEndPage() {
+    this.navCtrl.push('GameEndPage', {scoreParam: this.score})
+      .then(() => this.navCtrl.remove(this.viewCtrl.index));
   }
 
 }
