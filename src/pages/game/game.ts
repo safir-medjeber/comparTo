@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController} from 'ionic-angular';
+import {IonicPage, NavController, ViewController} from 'ionic-angular';
 import {MOCK_ITEMS} from "../../services/mock-items";
 import {Question} from "../../model/Question";
 import {GameRulesService, GameState} from "../../services/gameRules.service";
@@ -16,13 +16,14 @@ export class GamePage {
 
   public score: number = 0;
 
-  public animating: boolean = true;
+  public animating: boolean;
   public percentage: number = 0;
   private percentageInterval: number;
+  private gameOver: boolean;
 
   private game: GameRulesService;
 
-  constructor(public navCtrl: NavController) {
+  constructor(private navCtrl: NavController, private viewCtrl: ViewController) {
     this.game = new GameRulesService(MOCK_ITEMS);
     this.game.emitter.subscribe(this.handler);
     this.game.start();
@@ -32,8 +33,6 @@ export class GamePage {
     switch (event) {
       case GameState.CanQuestion:
         this.score = this.game.getScore();
-        clearInterval(this.percentageInterval);
-        this.percentage = 0;
         if(this.score == 0) {
           this.getQuestion();
         } else {
@@ -49,7 +48,11 @@ export class GamePage {
         this.reset();
         break;
       case GameState.GameOver:
-        this.goToGameEndPage();
+        this.animate();
+        this.gameOver = true;
+        setTimeout(() => {
+          this.goToGameEndPage();
+        }, 2000)
         break;
     }
   }
@@ -60,6 +63,8 @@ export class GamePage {
   }
 
   animate(): any {
+    clearInterval(this.percentageInterval);
+    this.percentage = 0;
     this.animating = true;
   }
 
@@ -68,7 +73,8 @@ export class GamePage {
   }
 
   goToGameEndPage() {
-    this.navCtrl.push('GameEndPage', {scoreParam: this.score});
+    this.navCtrl.push('GameEndPage', {scoreParam: this.score})
+      .then(() => this.navCtrl.remove(this.viewCtrl.index));
   }
 
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {Item} from "../../model/Item";
 
@@ -12,11 +12,11 @@ import {Item} from "../../model/Item";
 
 export class GameEndPage implements OnInit{
 
-  private score: number;
-  private record: number;
+  score: number;
+  record: number;
   private itemsByThematic: Item[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+  constructor(private navCtrl: NavController, private viewCtrl: ViewController, private navParams: NavParams, private storage: Storage) {
     this.score = this.navParams.get('scoreParam');
     this.itemsByThematic = this.navParams.get('thematicParam');
   }
@@ -27,17 +27,10 @@ export class GameEndPage implements OnInit{
 
   private determineRecord(): void {
     this.storage.get('record').then((previousRecord) => {
-      if (previousRecord != null) {
-        if (previousRecord < this.score) {
-          this.setNewRecord();
-        }
-        else {
-          this.record = previousRecord;
-        }
-      }
-      else{
+      if(previousRecord == null  || previousRecord < this.score )
         this.setNewRecord();
-      }
+      else
+        this.record = previousRecord;
     });
   }
 
@@ -56,8 +49,8 @@ export class GameEndPage implements OnInit{
   }
 
   public goToGamePage():void {
-   this.navCtrl.push('GamePage', {thematicParam: this.itemsByThematic});
-   // this.resetRecord();
+    this.navCtrl.push('GamePage', {scoreParam: this.score})
+      .then(() => this.navCtrl.remove(this.viewCtrl.index));
   }
 
 }
