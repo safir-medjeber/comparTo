@@ -1,35 +1,15 @@
+<ion-content>
+  <div class="page-game">
+    <div class="score">{{score}}</div>
 
+    <div *ngIf="animating && gameOver" class="center wrong">X</div>
+    <div *ngIf="animating && !gameOver" class="center wright">O</div>
+    <water-bubble class="center" [reset]="animating" [percentage]="percentage"></water-bubble>
 
-<ion-content padding>
+    <item *ngIf="!!lastQuestion" class="item-1" [item]="lastQuestion?.proposition1" [leaving]="true"></item>
+    <item class="item-1" [showValue]="animating" [item]="currentQuestion?.proposition1" (click)="game.replyA()"></item>
+    <item *ngIf="!!lastQuestion" class="item-2" [item]="lastQuestion?.proposition2" [leaving]="true"></item>
+    <item class="item-2" [showValue]="animating" [item]="currentQuestion?.proposition2" (click)="game.replyB()"></item>
 
-
-
-  <ion-grid style ="height:100%">
-    <ion-row style ="height:6%" >
-        <ion-icon name="pause" (click)="goToGameOptionsPage()" class="larger" padding-right></ion-icon>
-        <ion-icon name="volume-up" class="larger "></ion-icon>
-        <h2>{{this.score}}</h2>
-    </ion-row>
-
-
-
-    <ion-row style ="height:47%">
-      <ion-card>
-        <img src="{{this.currentQuestion.proposition1?.url}}" (click)="playerAnswer(this.currentQuestion.proposition1, 1)"/>
-        <h2>{{this.currentQuestion.proposition1?.name}}</h2>
-      </ion-card>
-    </ion-row>
-
-    <ion-row>
-      {{this.currentQuestion.question}}
-    </ion-row>
-
-    <ion-row style ="height:47%">
-      <ion-card>
-        <img src={{this.currentQuestion.proposition2?.url}} (click)="playerAnswer(this.currentQuestion.proposition2, 2)"/>
-        <h2>{{this.currentQuestion.proposition2?.name}}</h2>
-      </ion-card>
-    </ion-row>
-  </ion-grid>
-
+  </div>
 </ion-content>

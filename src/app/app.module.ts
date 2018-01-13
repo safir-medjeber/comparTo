@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -11,7 +12,6 @@ import { MyApp } from './app.component';
 import { MainMenuPage } from '../pages/main-menu/main-menu';
 
 import { ItemService } from '../services/item.service'
-import { GameRulesService } from "../services/gameRules.service";
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { GameRulesService } from "../services/gameRules.service";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     IonicStorageModule.forRoot()
@@ -34,7 +35,6 @@ import { GameRulesService } from "../services/gameRules.service";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ItemService,
-    GameRulesService
   ]
 })
 export class AppModule {}
