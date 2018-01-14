@@ -11,6 +11,8 @@ import {ItemService} from "../../services/item.service";
 
 export class ThematicsPage {
 
+
+  public pays: string = "Pays"
   constructor(public navCtrl: NavController , public itemService: ItemService) {
 
   }
@@ -22,4 +24,5 @@ export class ThematicsPage {
     });
 
   }
+
 }
