@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges} from "@angular/core";
+import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 
 @Component({
   selector: 'water-bubble',
@@ -8,7 +8,8 @@ export class WaterBubbleComponent implements OnChanges {
   @Input() reset: boolean;
   @Input() percentage: number = 0;
 
-  ngOnChanges(): void {
+  ngOnChanges(simpleChange: SimpleChanges): void {
+    if(simpleChange.percentage)
     this.percentage = Math.max(0, Math.min(100 - this.percentage, 100));
   }
 }
