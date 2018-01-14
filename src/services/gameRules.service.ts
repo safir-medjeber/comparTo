@@ -1,4 +1,4 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {EventEmitter} from '@angular/core';
 import {Item} from "../model/Item";
 import {Question, WhoIsHigher} from "../model/Question";
 

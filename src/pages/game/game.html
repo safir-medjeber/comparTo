@@ -2,9 +2,9 @@
   <div class="page-game">
     <score class="score" [score]="score"></score>
 
-    <div class="center vs" [class.wrong]="animating && gameOver">VS</div>
-    <wrong *ngIf="animating && gameOver" class="center wrong"></wrong>
-    <wright *ngIf="animating && !gameOver" class="center wright"></wright>
+    <question class="center vs" [animating]="animating" [gameOver]="gameOver"></question>
+
+
     <water-bubble class="center" [reset]="animating" [percentage]="percentage"></water-bubble>
 
     <item *ngIf="!!lastQuestion" class="item-1" [item]="lastQuestion?.proposition1" [leaving]="true"></item>

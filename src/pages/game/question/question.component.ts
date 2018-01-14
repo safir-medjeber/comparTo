@@ -1,6 +1,12 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, OnChanges} from "@angular/core";
+import {animate, keyframes, style, transition, trigger} from "@angular/animations";
 
-import {Question} from "../../../model/Question";
+const checkMark = `
+    <svg class="status green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="75">
+      <circle class="circle checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+      <path class="path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+    </svg>
+  `
 
 @Component({
   selector: 'wrong',
@@ -16,12 +22,45 @@ export class WrongComponent {
 
 @Component({
   selector: 'wright',
-  template: `
-    <svg class="status green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="75">
-      <circle class="circle checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-      <path class="path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-    </svg>
-  `
+  template: checkMark
 })
 export class WrightComponent {
 }
+
+@Component({
+  selector: 'question',
+  template: `
+    <div class="question" [@wright]="state" (@wright.done)="state = 'wait'" >
+      VS
+      <wrong *ngIf="animating && gameOver" class="center wrong"></wrong>
+      <wright *ngIf="state == 'wright'" class="center wright"></wright>
+    </div>`,
+  animations: [
+    trigger('wright', [
+      transition('wait => wright', [
+        animate('300ms 2s', keyframes([
+            style({boxShadow: 'inset 0 0 0 40px #7ac142'}),
+            style({boxShadow: 'inset 0 0 0 0 #7ac142'}),
+          ]
+        ))
+      ])
+    ])
+  ]
+})
+export class QuestionComponent implements OnChanges {
+  @Input() animating: boolean
+  @Input() gameOver: boolean
+  state: QuestionState = 'wait';
+
+  wait() {
+    this.state = 'wait'
+  }
+
+  ngOnChanges(): void {
+    if (this.animating && !this.gameOver) {
+      this.state = 'wright';
+    }
+  }
+}
+
+type QuestionState = 'wait' | 'wright'
