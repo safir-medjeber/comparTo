@@ -1,0 +1,57 @@
+page-game-start {
+
+  .vertical-align-content-page > * {
+    display: flex !important;
+    align-content: center !important;
+    align-items: center !important;
+  }
+
+  .background-page {
+    //background-color: #596273;
+    //background-color: #78C0E0;
+    background-color: #72BCC5;
+  }
+
+  .title-page {
+    font-size: 4.4rem;
+    color: #f6f2f1;
+    font-weight: normal;
+  }
+
+  .btn-square {
+    padding: 50%;
+    width: 50%;
+  }
+
+  .country-icon {
+    background: url("../../assets/images/earth-globe.svg") no-repeat center;
+    background-size: 70%;
+    background-color: #E7EEEF;
+    //background-color: rgba(255, 255, 255, .65);
+  }
+
+  .food-icon {
+    background: url("../../assets/images/hamburger.svg") no-repeat center;
+    background-size: 70%;
+    background-color: #E7EEEF;
+  }
+
+  .building-icon {
+    background: url("../../assets/images/city.svg") no-repeat center;
+    background-size: 75%;
+    background-color: #E7EEEF;
+  }
+
+  .car-icon {
+    background: url("../../assets/images/racing.svg") no-repeat center;
+    background-size: 80%;
+    background-color: #E7EEEF;
+  }
+
+  .stadium-icon {
+    background: url("../../assets/images/stadium.svg") no-repeat center;
+    background-size: 70%;
+    background-color: #E7EEEF;
+  }
+
+}
