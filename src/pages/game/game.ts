@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, ViewController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {MOCK_ITEMS} from "../../services/mock-items";
 import {Question} from "../../model/Question";
 import {GameRulesService, GameState} from "../../services/gameRules.service";

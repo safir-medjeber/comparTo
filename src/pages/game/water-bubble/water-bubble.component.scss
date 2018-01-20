@@ -3,8 +3,8 @@ $waterBColor: #C7EEFF;
 
 .box {
   position: relative;
-  height: 75px;
-  width: 75px;
+  height: $buble-size;
+  width: $buble-size;
   border-radius: 100%;
   overflow: hidden;
   margin: auto;
