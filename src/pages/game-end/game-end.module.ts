@@ -1,10 +1,12 @@
 import {NgModule} from "@angular/core";
 import {IonicPageModule} from "ionic-angular";
 import {GameEndPage} from "./game-end";
+import {GameEndInformationComponent} from "./game-information/game-end-information.component";
 
 @NgModule({
   declarations: [
-    GameEndPage
+    GameEndPage,
+    GameEndInformationComponent
   ],
   imports: [
     IonicPageModule.forChild(GameEndPage)
@@ -13,4 +15,4 @@ import {GameEndPage} from "./game-end";
     GameEndPage
   ]
 })
-export class GameModule {}
+export class GameEndModule {}

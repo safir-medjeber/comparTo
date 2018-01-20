@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component} from '@angular/core';
+import {Platform} from 'ionic-angular';
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {GameStartPage} from "../pages/game-start/game-start";
 
-import { MainMenuPage } from '../pages/main-menu/main-menu';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = MainMenuPage;
+  rootPage:any = GameStartPage;
 
   constructor(platform: Platform, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       splashScreen.hide();
+
     });
   }
 }
