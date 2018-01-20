@@ -2,12 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {Item} from "../../model/Item";
+import {ItemService} from "../../services/item.service";
 
 
 @IonicPage()
 @Component({
-  selector: 'game-end-page',
-  templateUrl: 'game-end.html'
+  selector: 'page-game-end',
+  templateUrl: 'game-end.html',
+
 })
 
 export class GameEndPage implements OnInit{
@@ -15,6 +17,7 @@ export class GameEndPage implements OnInit{
   score: number;
   record: number;
   private itemsByThematic: Item[];
+
 
   constructor(private navCtrl: NavController, private viewCtrl: ViewController, private navParams: NavParams, private storage: Storage) {
     this.score = this.navParams.get('scoreParam');
@@ -49,8 +52,12 @@ export class GameEndPage implements OnInit{
   }
 
   public goToGamePage():void {
-    this.navCtrl.push('GamePage', {scoreParam: this.score})
+    this.navCtrl.push('GamePage', {scoreParam: this.score, thematicParam: this.itemsByThematic})
       .then(() => this.navCtrl.remove(this.viewCtrl.index));
+  }
+
+  goToGameStartPage(){
+    this.navCtrl.popToRoot();
   }
 
 }
