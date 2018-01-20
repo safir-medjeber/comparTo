@@ -14,7 +14,7 @@ export class GamePage {
   public currentQuestion: Question;
   public lastQuestion?: Question;
 
-  public score: number = 0;
+  public score: number = -1;
 
   public animating: boolean;
   public percentage: number = 0;
@@ -32,8 +32,8 @@ export class GamePage {
   handler = (event: GameState) => {
     switch (event) {
       case GameState.CanQuestion:
-        this.score = this.game.getScore();
-        if(this.score == 0) {
+        if(this.score == -1) {
+          this.score = 0;
           this.getQuestion();
         } else {
           this.animate();
@@ -64,6 +64,7 @@ export class GamePage {
 
   animate(): any {
     clearInterval(this.percentageInterval);
+    setTimeout(() => this.score = this.game.getScore(), 900)
     this.percentage = 0;
     this.animating = true;
   }

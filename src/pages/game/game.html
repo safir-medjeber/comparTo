@@ -1,9 +1,10 @@
 <ion-content>
   <div class="page-game">
-    <div class="score">{{score}}</div>
+    <score class="score" [score]="score"></score>
 
-    <div *ngIf="animating && gameOver" class="center wrong">X</div>
-    <div *ngIf="animating && !gameOver" class="center wright">O</div>
+    <question class="center vs" [animating]="animating" [gameOver]="gameOver"></question>
+
+
     <water-bubble class="center" [reset]="animating" [percentage]="percentage"></water-bubble>
 
     <item *ngIf="!!lastQuestion" class="item-1" [item]="lastQuestion?.proposition1" [leaving]="true"></item>
