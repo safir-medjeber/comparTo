@@ -1,0 +1,26 @@
+$raleway-font-path: $font-path !default;
+
+$weights: (
+    (ExtraLight, 200),
+    (Light, 300),
+    (Regular, 400),
+    (Medium, 500),
+    (SemiBold, 600),
+    (Bold, 700),
+    (ExtraBold, 800),
+    (Black, 900),
+);
+
+@each $type, $weight in $weights {
+  @font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: $weight;
+    src:
+      local("Raleway #{$type}"),
+      local("Raleway-#{$type}"),
+      //url("#{$raleway-font-path}/Raleway-#{$type}.woff2") format("woff2"),
+      //url("#{$raleway-font-path}/Raleway-#{$type}.woff") format("woff"),
+      url("#{$raleway-font-path}/Raleway-#{$type}.ttf") format("truetype");
+  }
+}

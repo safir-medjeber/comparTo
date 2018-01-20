@@ -8,6 +8,15 @@ page-game-end {
 
   .background-page {
     background-color: #72BCC5;
+    &:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(67deg, rgba(255,255,255,.5) 0%,rgba(120,192,224,0) 100%);
+    }
   }
 
   .title-page {
