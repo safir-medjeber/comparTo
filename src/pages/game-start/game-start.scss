@@ -9,7 +9,7 @@ page-game-start {
   .background-page {
     //background-color: #596273;
     //background-color: #78C0E0;
-    background-color: #72BCC5;
+    background: #72BCC5 linear-gradient(67deg, rgb(184, 221, 226) 0%, rgb(114, 188, 197) 100%);
   }
 
   .title-page {
@@ -21,6 +21,11 @@ page-game-start {
   .btn-square {
     padding: 50%;
     width: 50%;
+  }
+
+  .btn-growth {
+    position: fixed;
+    background: #E7EEEF linear-gradient(67deg, rgba(255, 255, 255, .5) 0%, rgba(120, 192, 224, 0) 100%);
   }
 
   .country-icon {

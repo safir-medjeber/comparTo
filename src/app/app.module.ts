@@ -10,6 +10,7 @@ import {IonicStorageModule} from "@ionic/storage";
 
 import {MyApp} from './app.component';
 import {GameStartPage} from "../pages/game-start/game-start";
+import {GameService} from '../services/game.service'
 import {ItemService} from '../services/item.service'
 
 @NgModule({
@@ -34,6 +35,7 @@ import {ItemService} from '../services/item.service'
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ItemService,
+    GameService
   ]
 })
 export class AppModule {}

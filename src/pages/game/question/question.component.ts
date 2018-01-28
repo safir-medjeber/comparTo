@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges} from "@angular/core";
+import {ChangeDetectorRef, Component, Input, OnChanges} from "@angular/core";
 import {animate, animateChild, group, keyframes, query, state, style, transition, trigger} from "@angular/animations";
 
 const checkMark = `
@@ -30,9 +30,9 @@ export class WrightComponent {
 @Component({
   selector: 'question',
   template: `
-    <div class="question" [@wright]="state" (@wright.done)="state = 'wait'">
+    <div class="question" [@wright]="state" (@wright.done)="wait()">
       <div class="versus">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35.69">
+        <svg [@vs]="state" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35.69">
           <defs xmlns="">
             <clipPath xmlns="http://www.w3.org/2000/svg" id="clipV">
               <path
@@ -54,7 +54,7 @@ export class WrightComponent {
         </svg>
       </div>
       <wrong *ngIf="animating && gameOver" class="center wrong"></wrong>
-      <wright *ngIf="state == 'wright'" class="center wright"></wright>
+      <wright *ngIf="wright" class="center wright"></wright>
     </div>`,
   animations: [
     trigger('wright', [
@@ -69,14 +69,16 @@ export class WrightComponent {
           ))
         ])
       ]),
+    ]),
+    trigger('vs', [
       transition('* => wait', [
-        query('@v', [animateChild()]),
-        query('@s', [animateChild()]),
-      ])
+        query("@v", [animateChild()]),
+        query("@s", [animateChild()])
+      ]),
     ]),
     trigger('v', [
       transition('wait => wright', [QuestionComponent.hide]),
-        transition('* => wait', [
+      transition('* => wait', [
         animate('200ms 150ms cubic-bezier(0.29, 0.74, 0.57, 0.15)', QuestionComponent.stroke)
       ]),
     ]),
@@ -96,15 +98,22 @@ export class QuestionComponent implements OnChanges {
     style({"stroke-dashoffset": 60}),
     style({"stroke-dashoffset": 0}),
   ]);
-  private static hide = animate('200ms 2s', keyframes([style({opacity: 0}),]));
+  wright: boolean = false;
+  private static hide = animate('10ms 1s', keyframes([style({opacity: 0}),]));
+
+  constructor(private cdr: ChangeDetectorRef) {
+  }
 
   wait() {
     this.state = 'wait'
+    this.wright = false;
+    this.cdr.detectChanges()
   }
 
   ngOnChanges(): void {
     if (this.animating && !this.gameOver) {
       this.state = 'wright';
+      this.wright = true;
     }
   }
 }

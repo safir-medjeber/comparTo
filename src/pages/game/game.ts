@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular
 import {MOCK_ITEMS} from "../../services/mock-items";
 import {Question} from "../../model/Question";
 import {GameRulesService, GameState} from "../../services/gameRules.service";
+import {GameService} from "../../services/game.service";
 
 @IonicPage()
 @Component({
@@ -20,11 +21,12 @@ export class GamePage {
   public percentage: number = 0;
   private percentageInterval: number;
   private gameOver: boolean;
+  private canReply: boolean = true;
 
   private game: GameRulesService;
 
-  constructor(private navCtrl: NavController, private viewCtrl: ViewController) {
-    this.game = new GameRulesService(MOCK_ITEMS);
+  constructor(private navCtrl: NavController, private viewCtrl: ViewController, gameService: GameService) {
+    this.game = gameService.getGame();
     this.game.emitter.subscribe(this.handler);
     this.game.start();
   }
@@ -41,7 +43,7 @@ export class GamePage {
             this.reset();
             this.lastQuestion = this.currentQuestion;
             this.getQuestion()
-          }, 2000)
+          }, 2500)
         }
         break;
       case GameState.Questioning:
@@ -52,7 +54,7 @@ export class GamePage {
         this.gameOver = true;
         setTimeout(() => {
           this.goToGameEndPage();
-        }, 2000)
+        }, 3000)
         break;
     }
   }
@@ -67,10 +69,12 @@ export class GamePage {
     setTimeout(() => this.score = this.game.getScore(), 900)
     this.percentage = 0;
     this.animating = true;
+    this.canReply = false;
   }
 
   reset(): any {
     this.animating = false;
+    setTimeout(() => this.canReply = true,  400)
   }
 
   goToGameEndPage() {
@@ -78,4 +82,13 @@ export class GamePage {
       .then(() => this.navCtrl.remove(this.viewCtrl.index));
   }
 
+  replyA() {
+    if(this.canReply) {
+      this.game.replyA()
+    }
+  }
+
+  replyB() {
+    if(this.canReply) this.game.replyB()
+  }
 }
