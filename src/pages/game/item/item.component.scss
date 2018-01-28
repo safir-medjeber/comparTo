@@ -17,15 +17,33 @@
       background-size: cover;
       background-position-x: center;
       background-position-y: center;
+    }
+    &:after {
+      content: "";
+      @include absolute;
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
 
-      &:after {
-        content: "";
-        @include absolute;
-        background-color: rgba(0, 0, 0, .5);
-      }
+  &.withMiniature {
+    .background-wrapper .background {
+      left: -8px;
+      top: -8px;
+      right: -8px;
+      bottom: -8px;
+      filter: blur(8px);
+    }
+    .content {
+      .image {
+        display: initial;
+        max-width: 33%;
+        max-height: 28%;
+        margin-bottom: 1rem;
+        border-radius: 5px;
 
-      &.blur {
-        filter: blur(8px);
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
       }
     }
   }
@@ -40,17 +58,8 @@
     color: white;
 
     .image {
-      max-width: 33%;
-      max-height: 28%;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-
-      perspective: 1000px;
-      transform-style: preserve-3d;
-      backface-visibility: hidden;
-
+      display: none;
     }
-
     .name {
       font-size: 3vh;
       font-weight: 600;
@@ -65,27 +74,6 @@
       .unit {
         font-size: .75em;
       }
-    }
-  }
-
-  &.leaving {
-    .background {
-      animation: fade-in 1s reverse;
-    }
-  }
-
-  &.incoming {
-    .background {
-      animation: fade-in 1s;
-    }
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0
-    }
-    to {
-      opacity: 1
     }
   }
 }
