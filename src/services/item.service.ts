@@ -19,7 +19,7 @@ export class ItemService{
 
   private readonly items: Observable<Item[]>;
   constructor(private  httpClient: HttpClient) {
-    this.items = this.getData();
+    this.items = this.getData()
   }
 
   public getData(): Observable<Item[]>{

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {Item} from "../../model/Item";
+import {ItemService} from "../../services/item.service";
 
 
 @IonicPage()
@@ -51,7 +52,7 @@ export class GameEndPage implements OnInit{
   }
 
   public goToGamePage():void {
-    this.navCtrl.push('GamePage', {scoreParam: this.score})
+    this.navCtrl.push('GamePage', {scoreParam: this.score, thematicParam: this.itemsByThematic})
       .then(() => this.navCtrl.remove(this.viewCtrl.index));
   }
 

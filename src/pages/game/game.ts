@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, ViewController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {MOCK_ITEMS} from "../../services/mock-items";
 import {Question} from "../../model/Question";
 import {GameRulesService, GameState} from "../../services/gameRules.service";
@@ -23,8 +23,9 @@ export class GamePage {
 
   private game: GameRulesService;
 
-  constructor(private navCtrl: NavController, private viewCtrl: ViewController) {
-    this.game = new GameRulesService(MOCK_ITEMS);
+  constructor(private navCtrl: NavController, private navParam: NavParams,  private viewCtrl: ViewController) {
+    this.game = new GameRulesService(this.navParam.get("thematicParam"));
+    //this.game = new GameRulesService(MOCK_ITEMS);
     this.game.emitter.subscribe(this.handler);
     this.game.start();
   }
@@ -74,7 +75,7 @@ export class GamePage {
   }
 
   goToGameEndPage() {
-    this.navCtrl.push('GameEndPage', {scoreParam: this.score})
+    this.navCtrl.push('GameEndPage', {scoreParam: this.score, thematicParam: this.navParam.get("thematicParam")})
       .then(() => this.navCtrl.remove(this.viewCtrl.index));
   }
 
