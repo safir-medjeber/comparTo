@@ -1,6 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {animate, state, style, transition, trigger} from "@angular/animations";
 import {GameService} from "../../services/game.service";
 import {transition, trigger, style, animate, keyframes, query, animateChild, state, group} from "@angular/animations";
 
