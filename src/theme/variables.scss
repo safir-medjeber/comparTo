@@ -88,5 +88,16 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+//@import "roboto";
+//@import "noto-sans";
+
+
+@import "../assets/fonts/raleway";
+$font-family-md-base: "Raleway";
+$font-family-ios-base: "Raleway";
+$font-family-wp-base: "Raleway";
+
+// Buble size
+
+$buble-size: 12vh;
+$buble-shadow: 7vh;

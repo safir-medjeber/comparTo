@@ -1,4 +1,5 @@
 <ion-content class="vertical-align-content-page background-page" text-center padding>
+  <div [@grow]="click" #e class="btn-growth"></div>
 
   <ion-grid [@animate]="state" >
     <ion-row>
@@ -11,13 +12,11 @@
     </ion-row>
 
     <ion-row  [@fadeIn]="state">
-      <ion-col col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 *ngFor="let label of thematicLabels">
-        <button class="btn-square {{label}}-icon" (click)="goToGamePage(label)"></button>
+      <ion-col col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 *ngFor="let theme of themes">
+        <button #button class="btn-square {{theme}}-icon" (click)="goToGamePage(button, theme)"></button>
       </ion-col>
     </ion-row>
 
   </ion-grid>
 </ion-content>
-
-
 

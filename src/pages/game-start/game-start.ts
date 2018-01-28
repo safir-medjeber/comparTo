@@ -1,8 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ItemService} from "../../services/item.service";
+import {GameService} from "../../services/game.service";
 import {transition, trigger, style, animate, keyframes, query, animateChild, state, group} from "@angular/animations";
+import {themes} from "../../model/Theme";
 
+const full = {
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  "z-index": 500,
+  //"background-color": "#72BCC5"
+};
 
 @Component({
   selector: 'page-game-start',
@@ -52,21 +61,41 @@ import {transition, trigger, style, animate, keyframes, query, animateChild, sta
         )
       ),
     ]),
+    trigger("grow", [
+      state("true", style(full)),
+      transition("false => true", [
+        style({"z-index": 500}),
+        animate("150ms ease", style(full))
+      ])
+    ])
   ]
 })
-
 export class GameStartPage {
+  @ViewChild("e") e;
+  click = false;
   state: string = '';
+
   public thematicLabels: string[] = ["country", "building", "food", "car", "stadium"];
+  themes = themes;
 
-  constructor(public navCtrl: NavController , public itemService: ItemService) {
+  constructor(public navCtrl: NavController, private gameService: GameService) {
+
   }
 
-  goToGamePage(label: string){
-    this.itemService.getItemsByThematic(label).subscribe((data) => {
-      this.navCtrl.push('GamePage', {thematicParam: data});
-    });
+  goToGamePage(button: HTMLElement, label: themes){
+    let bounds = button.getBoundingClientRect();
+    let style = this.e.nativeElement.style;
+    style.top = bounds.top + "px";
+    style.left = bounds.left + "px";
+    style.width = bounds.width + "px";
+    style.height = bounds.height + "px";
+    this.click = true;
+
+    this.gameService.setTheme(label)
+    setTimeout(() => {
+        this.navCtrl.push('GameQuestionPage', {}, {'animate': false})
+      setTimeout(() => this.click = false, 500)
+      }, 150
+    )
   }
-
-
 }

@@ -8,9 +8,9 @@
     <water-bubble class="center" [reset]="animating" [percentage]="percentage"></water-bubble>
 
     <item *ngIf="!!lastQuestion" class="item-1" [item]="lastQuestion?.proposition1" [leaving]="true"></item>
-    <item class="item-1" [showValue]="animating" [item]="currentQuestion?.proposition1" (click)="game.replyA()"></item>
+    <item class="item-1" [showValue]="animating" [item]="currentQuestion?.proposition1" (click)="replyA()"></item>
     <item *ngIf="!!lastQuestion" class="item-2" [item]="lastQuestion?.proposition2" [leaving]="true"></item>
-    <item class="item-2" [showValue]="animating" [item]="currentQuestion?.proposition2" (click)="game.replyB()"></item>
+    <item class="item-2" [showValue]="animating" [item]="currentQuestion?.proposition2" (click)="replyB()"></item>
 
   </div>
 </ion-content>

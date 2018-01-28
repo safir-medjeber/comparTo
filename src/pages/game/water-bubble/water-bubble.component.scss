@@ -1,10 +1,10 @@
-$waterFColor: #4D6DE3;
-$waterBColor: #C7EEFF;
+$waterFColor: #72BCC5;
+$waterBColor: #E7EEEF;
 
 .box {
   position: relative;
-  height: 75px;
-  width: 75px;
+  height: $buble-size;
+  width: $buble-size;
   border-radius: 100%;
   overflow: hidden;
   margin: auto;
@@ -21,7 +21,7 @@ $waterBColor: #C7EEFF;
 
     &.reset {
       transition: all 1s;
-      transform: translateY(100%);
+      transform: translateY(200%) !important;
     }
 
     &_wave {
