@@ -25,7 +25,7 @@ export class GamePage {
 
   private game: GameRulesService;
 
-  constructor(private navCtrl: NavController, private viewCtrl: ViewController, gameService: GameService) {
+  constructor(private navCtrl: NavController, private navParam: NavParams,  private viewCtrl: ViewController, gameService: GameService) {
     this.game = gameService.getGame();
     this.game.emitter.subscribe(this.handler);
     this.game.start();
@@ -78,14 +78,12 @@ export class GamePage {
   }
 
   goToGameEndPage() {
-    this.navCtrl.push('GameEndPage', {scoreParam: this.score})
+    this.navCtrl.push('GameEndPage', {scoreParam: this.score, thematicParam: this.navParam.get("thematicParam")})
       .then(() => this.navCtrl.remove(this.viewCtrl.index));
   }
 
   replyA() {
-    if(this.canReply) {
-      this.game.replyA()
-    }
+    if(this.canReply) this.game.replyA()
   }
 
   replyB() {

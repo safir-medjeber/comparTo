@@ -140,7 +140,7 @@ Palaos,http://flags.fmcdn.net/data/flags/w580/pw.png,20901,country,habitants
 Panamá,http://flags.fmcdn.net/data/flags/w580/pa.png,3405813,country,habitants
 Papouasie-Nouvelle-Guinée,http://flags.fmcdn.net/data/flags/w580/pg.png,7398500,country,habitants
 Paraguay,http://flags.fmcdn.net/data/flags/w580/py.png,6783374,country,habitants
-country-Bas,http://flags.fmcdn.net/data/flags/w580/nl.png,16842200,country,habitants
+Pays-Bas,http://flags.fmcdn.net/data/flags/w580/nl.png,16842200,country,habitants
 Pérou,http://flags.fmcdn.net/data/flags/w580/pe.png,30475144,country,habitants
 Philippines,http://flags.fmcdn.net/data/flags/w580/ph.png,99275100,country,habitants
 Pologne,http://flags.fmcdn.net/data/flags/w580/pl.png,38502396,country,habitants
@@ -198,3 +198,34 @@ Viêt Nam,http://flags.fmcdn.net/data/flags/w580/vn.png,89708900,country,habitan
 Yémen,http://flags.fmcdn.net/data/flags/w580/ye.png,25235000,country,habitants
 Zambie,http://flags.fmcdn.net/data/flags/w580/zm.png,14580290,country,habitants
 Zimbabwe,http://flags.fmcdn.net/data/flags/w580/zw.png,12973808,country,habitants
+Stade de France - Paris,https://upload.wikimedia.org/wikipedia/commons/2/2b/France-Angleterre_au_Stade_De_France.jpg,81338,stadium,places
+Orange Vélodrome - Marseille,https://upload.wikimedia.org/wikipedia/commons/1/16/Stade_V%C3%A9lodrome_%2820150405%29.jpg,67354,stadium,places
+Groupama Stadium - Lyon,https://upload.wikimedia.org/wikipedia/commons/c/c4/Stade_Lumi%C3%A8re.jpg,59186,stadium,places
+Stade Pierre-Mauroy - Lille,https://upload.wikimedia.org/wikipedia/commons/2/2c/Grand_Stade_Lille_M%C3%A9tropole_LOSC_first_match.JPG,50157,stadium,places
+Parc des Princes - Paris,https://upload.wikimedia.org/wikipedia/commons/f/f4/Paris_Parc_des_Princes_1.jpg,48583,stadium,places
+Stade Matmut-Atlantique - Bordeaux,https://upload.wikimedia.org/wikipedia/commons/a/ab/Grand_Stade_de_Bordeaux_2014-11-16.jpg,42115,stadium,places
+Stade Geoffroy-Guichard - Saint-Étienne,https://upload.wikimedia.org/wikipedia/commons/0/0c/Stade_Geoffroy-Guichard_-_Saint-Etienne_%2810-11-2013%29.jpg,41965,stadium,places
+Stade Bollaert-Delelis - Lens,https://upload.wikimedia.org/wikipedia/commons/6/6d/Stade_Bollaert_Delelis.JPG,38223,stadium,places
+Stade de la Beaujoire - Nantes,https://upload.wikimedia.org/wikipedia/commons/1/17/Stade_de_la_Beaujoire.jpg,37473,stadium,places
+Allianz Riviera - Nice,https://upload.wikimedia.org/wikipedia/fr/8/8c/Allianzrivierainauguration.jpg,35624,stadium,places
+Matmut Stadium Gerland - Lyon 7ème,https://upload.wikimedia.org/wikipedia/commons/a/a8/Stade-Gerland-RWC2007.JPG,35029,stadium,places
+Stade Chaban-Delmas - Bordeaux,https://upload.wikimedia.org/wikipedia/commons/e/e9/Panorama_Chaban-Delmas.jpg,34694,stadium,places
+Stadium - Toulouse,https://upload.wikimedia.org/wikipedia/commons/9/9f/StadiumToulouse3.JPG,33150,stadium,places
+Stade de la Mosson - Montpellier,https://upload.wikimedia.org/wikipedia/commons/e/eb/Australie-Fidji.4.JPG,32950,stadium,places
+U Arena - Nanterre,https://upload.wikimedia.org/wikipedia/commons/c/cd/UArena_Nanterre.jpg,32000,stadium,places
+Roazhon Park - Rennes,https://upload.wikimedia.org/wikipedia/commons/d/de/Staderennais-routelorient.JPG,29778,stadium,places
+Stade de la Meinau - Strasbourg,https://upload.wikimedia.org/wikipedia/commons/9/96/Stade_de_la_Meinau.JPG,29000,stadium,places
+Stade Saint-Symphorien - Metz,https://upload.wikimedia.org/wikipedia/commons/e/e7/Tribune_Ouest_Saint_Symphorien.jpg,25636,stadium,places
+Stade Océane - Le Havre,https://upload.wikimedia.org/wikipedia/commons/9/96/Stade_Oc%C3%A9ane_nuit.jpg,25178,stadium,places
+MMArena - Le Mans,https://upload.wikimedia.org/wikipedia/commons/3/3d/Le_mans_fc_laval.jpg,25064,stadium,places
+Stade du Hainaut - Valenciennes,https://upload.wikimedia.org/wikipedia/commons/b/b4/Int%C3%A9rieur_Stade_du_Hainaut_%282013%29.JPG,24926,stadium,places
+Stade Louis-Dugauguez - Sedan,https://upload.wikimedia.org/wikipedia/commons/2/2e/StadeLouisDugauguez.JPG,23183,stadium,places
+Stade du Moustoir - Lorient,https://upload.wikimedia.org/wikipedia/commons/d/db/Stade_du_Moustoir_1.jpg,23000,stadium,places
+Stade Auguste-Delaune - Reims,https://upload.wikimedia.org/wikipedia/commons/9/96/Tribune_Batteux.JPG,21628,stadium,places
+Stade de l'Abbé-Deschamps - Auxerre,https://upload.wikimedia.org/wikipedia/commons/0/0e/Stade_Abb%C3%A9-Deschamps_%289%29.jpg,21379,stadium,places
+Stade Michel-d'Ornano - Caen,https://upload.wikimedia.org/wikipedia/commons/c/cd/Match_Quevilly-Marseille.JPG,21215,stadium,places
+Stade de l'Aube - Troyes,https://upload.wikimedia.org/wikipedia/fr/a/a2/Fa%C3%A7ade_du_stade_de_l%27Aube.jpeg,20400,stadium,places
+Stade Marcel-Picot - Nancy,https://upload.wikimedia.org/wikipedia/commons/1/10/Picot.jpg,20087,stadium,places
+Stade des Alpes - Grenoble,https://upload.wikimedia.org/wikipedia/commons/9/92/GF38-CLERMONT001.jpg,20068,stadium,places
+Stade Auguste-Bonal - Montbéliard,https://upload.wikimedia.org/wikipedia/commons/1/1a/Stade_Sochaux_Bonale_3.jpg,20005,stadium,places
+Stade Charléty - Paris 13ème,https://upload.wikimedia.org/wikipedia/commons/4/42/Stade_Charlety_p1140688.jpg,19141,stadium,places

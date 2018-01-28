@@ -28,6 +28,23 @@ page-game-start {
     background: #E7EEEF linear-gradient(67deg, rgba(255, 255, 255, .5) 0%, rgba(120, 192, 224, 0) 100%);
   }
 
+  .logo-container {
+   position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo-icon {
+    background: url("../../assets/images/logo.svg") no-repeat center;
+    background-size: 80%;
+    //background-color: rgba(255, 255, 255, .65);
+  }
+
+
   .country-icon {
     background: url("../../assets/images/earth-globe.svg") no-repeat center;
     background-size: 70%;
