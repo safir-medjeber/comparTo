@@ -1,14 +1,14 @@
 import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 import {Item} from "../../../model/Item";
 import {transition, trigger, style, animate, keyframes, query, animateChild, group} from "@angular/animations";
+import {getTheme, Theme, ThemeProps} from "../../../model/Theme";
 
 @Component({
   selector: 'item',
   template: `
-    <div class="item" [@itemState]="state" (@itemState.done)="this.state = 'wait'">
+    <div class="item" [class.withMiniature]="themeProps.withMiniature" [@itemState]="state" (@itemState.done)="this.state = 'wait'">
       <div class="background-wrapper" [@background]="state">
         <div class="background" [style.backgroundImage]="'url(' + item.url + ')'"></div>
-        <div class="background blur" [style.backgroundImage]="'url(' + item.url + ')'"></div>
       </div>
       <div class="content">
         <img class="image" [alt]="item.name" [src]="item.url" [@image]="state"/>
@@ -73,8 +73,15 @@ export class ItemComponent implements OnChanges {
   @Input() item: Item;
   @Input() showValue: boolean;
   @Input() leaving: boolean;
+  @Input() theme: Theme
+  themeProps: ThemeProps;
 
   ngOnChanges(simpleChange: SimpleChanges): void {
+    if(simpleChange.theme) {
+      this.themeProps = getTheme[this.theme]
+      console.log(this.themeProps)
+    }
+
     if (simpleChange.item) {
       if (this.leaving) {
         this.state = 'out'

@@ -1,6 +1,7 @@
 import {EventEmitter} from '@angular/core';
 import {Item} from "../model/Item";
 import {Question, WhoIsHigher} from "../model/Question";
+import {Theme} from "../model/Theme";
 
 export class GameRulesService {
   private state: GameState;
@@ -13,7 +14,7 @@ export class GameRulesService {
   readonly timer: number = 8000;
   readonly emitter: EventEmitter<GameState>;
 
-  constructor(private items: Item[]) {
+  constructor(public readonly theme: Theme, private items: Item[]) {
     this.emitter = new EventEmitter();
     this.nextQuestion = this.pick();
   }
