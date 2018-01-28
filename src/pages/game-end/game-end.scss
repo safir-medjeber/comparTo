@@ -1,0 +1,41 @@
+page-game-end {
+
+  .vertical-align-content-page > * {
+    display: flex !important;
+    align-content: center !important;
+    align-items: center !important;
+  }
+
+  .background-page {
+    background-color: #72BCC5;
+  }
+
+  .title-page {
+    font-size: 4.4rem;
+    color: #E7EEEF;
+  }
+
+  .max-size{
+    max-width: 420px;
+  }
+
+  .btn-square {
+    padding: 50%;
+    width: 50%;
+  }
+
+  .replay-icon {
+    background: url("../../assets/images/reload.svg") no-repeat center;
+    background-size: 55%;
+    background-color: #E7EEEF;
+  }
+
+  .main-menu-icon {
+    background: url("../../assets/images/list.svg") no-repeat center;
+    background-size: 50%;
+    background-color: #E7EEEF;
+
+  }
+
+
+}
