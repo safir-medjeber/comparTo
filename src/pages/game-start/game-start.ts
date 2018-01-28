@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {GameService} from "../../services/game.service";
 import {transition, trigger, style, animate, keyframes, query, animateChild, state, group} from "@angular/animations";
+import {themes} from "../../model/Theme";
 
 const full = {
   top: 0,
@@ -75,11 +76,13 @@ export class GameStartPage {
   state: string = '';
 
   public thematicLabels: string[] = ["country", "building", "food", "car", "stadium"];
+  themes = themes;
 
   constructor(public navCtrl: NavController, private gameService: GameService) {
+
   }
 
-  goToGamePage(button: HTMLElement, label: Theme){
+  goToGamePage(button: HTMLElement, label: themes){
     let bounds = button.getBoundingClientRect();
     let style = this.e.nativeElement.style;
     style.top = bounds.top + "px";
