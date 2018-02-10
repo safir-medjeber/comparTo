@@ -53,7 +53,7 @@ const full = {
     ]),
     trigger('fadeIn', [
       transition('* => *',
-        animate('1000ms ease-in',
+        animate('500ms ease-in',
           keyframes([
             style({opacity: 0}),
             style({opacity: 1})
@@ -65,7 +65,7 @@ const full = {
       state("true", style(full)),
       transition("false => true", [
         style({"z-index": 500}),
-        animate("150ms ease", style(full))
+        animate("250ms ease-out", style(full))
       ])
     ])
   ]
@@ -95,7 +95,7 @@ export class GameStartPage {
     setTimeout(() => {
         this.navCtrl.push('GameQuestionPage', {}, {'animate': false})
       setTimeout(() => this.click = false, 500)
-      }, 150
+      }, 250
     )
   }
 }
