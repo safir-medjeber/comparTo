@@ -1,10 +1,19 @@
 page-game-question {
-  background: #72BCC5 linear-gradient(67deg, rgb(184, 221, 226) 0%, rgb(114, 188, 197) 100%);
+  .vertical-align-content-page > * {
+    display: flex !important;
+    align-content: center !important;
+    align-items: center !important;
+  }
+
+  .background-page {
+    background: #72BCC5 linear-gradient(67deg, rgb(184, 221, 226) 0%, rgb(114, 188, 197) 100%);
+  }
+
   h1 {
     font-size: 4em;
-    font-weight: 900;
-    text-align: left;
+   // font-weight: 90;
     max-width: 540px;
     margin: auto;
+    color: #5C5468;
   }
 }

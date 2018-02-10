@@ -93,7 +93,7 @@ export class GameStartPage {
 
     this.gameService.setTheme(label)
     setTimeout(() => {
-        this.navCtrl.push('GameQuestionPage', {}, {'animate': false})
+        this.navCtrl.push('GameQuestionPage', {'theme': label}, {'animate': false})
       setTimeout(() => this.click = false, 500)
       }, 150
     )

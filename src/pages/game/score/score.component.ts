@@ -11,7 +11,7 @@ import {animate, keyframes, style, transition, trigger} from "@angular/animation
         animate('300ms',
           keyframes([
             style({transform: 'scale(1)'}),
-            style({transform: 'scale(2)'}),
+            style({transform: 'scale(3)'}),
             style({transform: 'scale(1)'})
           ]))
       ])
