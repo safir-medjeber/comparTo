@@ -26,6 +26,7 @@ page-game-start {
   .btn-growth {
     position: fixed;
     background: #E7EEEF linear-gradient(67deg, rgba(255, 255, 255, .5) 0%, rgba(120, 192, 224, 0) 100%);
+    transition: all 500ms ease;
   }
 
   .logo-container {

@@ -1,8 +1,5 @@
-<ion-content>
   <div class="page-game">
-    <score class="score" [score]="score"></score>
-
-    <question class="center vs" [animating]="animating" [gameOver]="gameOver"></question>
+    <question class="center vs" [animating]="animating" [gameOver]="gameOver" [score]="score"></question>
 
     <water-bubble class="center" [reset]="animating" [percentage]="percentage"></water-bubble>
 
@@ -12,4 +9,3 @@
     <item class="item-2" [theme]="game.theme" [showValue]="animating" [item]="currentQuestion?.proposition2" (click)="replyB()"></item>
 
   </div>
-</ion-content>

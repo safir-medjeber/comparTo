@@ -66,7 +66,8 @@ export class GamePage {
 
   animate(): any {
     clearInterval(this.percentageInterval);
-    setTimeout(() => this.score = this.game.getScore(), 900)
+    this.score = this.game.getScore()
+
     this.percentage = 0;
     this.animating = true;
     this.canReply = false;
