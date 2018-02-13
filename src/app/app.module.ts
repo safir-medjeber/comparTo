@@ -7,9 +7,6 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {HttpClientModule} from '@angular/common/http';
 import {IonicStorageModule} from "@ionic/storage";
 
-
-
-
 import {MyApp} from './app.component';
 import {GameStartPage} from "../pages/game-start/game-start";
 import {GameService} from '../services/game.service'
