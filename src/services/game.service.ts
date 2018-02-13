@@ -10,7 +10,6 @@ export class GameService {
   private game: GameRulesService;
   private theme: Theme;
   private items: Item[];
-  itemsPromise: Promise<void>;
 
   constructor(private itemService: ItemService) {
   }
@@ -21,10 +20,10 @@ export class GameService {
     return game;
   }
 
-  setTheme(theme: Theme): void {
+  setTheme(theme: Theme): Promise<void> {
     this.items = null;
     this.theme = theme;
-    this.itemsPromise = this.itemService.getItemsByThematic(this.theme).toPromise().then(items => {
+    return this.itemService.getItemsByThematic(this.theme).toPromise().then(items => {
       this.items = items
       this.game = new GameRulesService(theme, items)
     })

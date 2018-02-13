@@ -79,7 +79,6 @@ export class ItemComponent implements OnChanges {
   ngOnChanges(simpleChange: SimpleChanges): void {
     if(simpleChange.theme) {
       this.themeProps = getTheme[this.theme]
-      console.log(this.themeProps)
     }
 
     if (simpleChange.item) {
