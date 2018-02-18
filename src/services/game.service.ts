@@ -28,4 +28,9 @@ export class GameService {
       this.game = new GameRulesService(theme, items)
     })
   }
+
+  getTheme(): Theme {
+    return this.theme;
+  }
+
 }
