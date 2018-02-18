@@ -4,32 +4,30 @@
 
     <ion-row>
       <ion-col padding>
-        <div class="title-page">
-          <svg width="100%" height="100%" viewBox="0 -300 1750 400" xmlns="http://www.w3.org/2000/svg">
-            <text font-size="300" fill="#E7EEEF">Fin de partie</text>
-          </svg>
-
-        </div>
+          <span class="title-page">Fin de partie</span>
       </ion-col>
     </ion-row>
 
     <ion-row >
-      <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>
-        <game-end-information [gameInfo]="'record'" [value]=this.record></game-end-information>
+      <ion-col class="game-button"  col-12 col-sm-12 col-md-12 col-lg-6  col-xl-6>
+        <div class="content replay" (click)="goToGamePage(label)">
+          <game-end-information [gameInfo]="'record'" [value]=this.record></game-end-information>
+          <game-end-information [gameInfo]="'score'" [value]=this.score></game-end-information>
+        </div>
       </ion-col>
-      <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>
-        <game-end-information [gameInfo]="'score'" [value]=this.score></game-end-information>
+      <ion-col class="game-button"  col-6 col-sm-6 col-md-6 col-lg-6  col-xl-6>
+        <div class="content replay" (click)="goToGamePage(label)">
+          <div class="icon"></div>
+        </div>
       </ion-col>
-      <ion-col  col-6 col-sm-6 col-md-6 col-lg-6  col-xl-6>
-        <button class="btn-square replay-icon" (click)="goToGamePage(label)"></button>
-      </ion-col>
-      <ion-col  col-6 col-sm-6 col-md-6 col-lg-6  col-xl-6>
-        <button class="btn-square main-menu-icon" (click)="goToGameStartPage()"></button>
+      <ion-col class="game-button"  col-6 col-sm-6 col-md-6 col-lg-6  col-xl-6>
+        <div class="content main-menu" (click)="goToGameStartPage()">
+          <div class="icon"></div>
+        </div>
       </ion-col>
     </ion-row>
-
   </ion-grid>
-</ion-content >
+</ion-content>
 
 
 

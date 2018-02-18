@@ -1,36 +1,162 @@
 page-game-end {
 
-  .vertical-align-content-page > * {
-    display: flex !important;
-    align-content: center !important;
-    align-items: center !important;
+  .grid {
+    max-height: 100%;
+  }
+
+  .buttons {
+    margin: auto;
+    flex: 1;
+  }
+
+  @mixin color($from, $to) {
+    background: $from;
+    background: linear-gradient(165deg, $from 0%, $from 45%, $to 45%, $to 100%);
+    .score {
+      text {
+        fill: $from;
+        font-size: 12px;
+      }
+    }
+  }
+  @mixin light-green {
+    @include color(#9FB52A, #A7BA38);
+  }
+  @mixin green {
+    @include color(#4EAE5B, #5CB56D);
+  }
+  @mixin dark-green {
+    @include color(#3B5E3F, #446649);
+  }
+  @mixin light-blue {
+    @include color(#94ACD7, #9DB3DB);
+  }
+  @mixin blue {
+    @include color(#3184C2, #3A89C5);
+  }
+  @mixin dark-blue {
+    @include color(#396376, #426B7C);
+  }
+  @mixin purple-blue {
+    @include color(#4C4CA7, #5454AB);
+  }
+  @mixin purple {
+    @include color(#834FB4, #8956B7);
+  }
+  @mixin purple-pink {
+    @include color(#CF659F, #D16FA5);
+  }
+  @mixin pink {
+    @include color(#EB7375, #EC7D80);
+  }
+  @mixin red {
+    @include color(#C03F2D, #C34938);
+  }
+  @mixin orange {
+    @include color(#EB812E, #ED893A);
+  }
+  @mixin yellow {
+    @include color(#FFAA36, #FFB345);
+  }
+  @mixin beige {
+    @include color(#D9C293, #DCC89E);
+  }
+  @mixin gray {
+    @include color(#7F8B8E, #869194);
   }
 
   .background-page {
-    background: #72BCC5 linear-gradient(67deg, rgb(184, 221, 226) 0%, rgb(114, 188, 197) 100%);
-  }
-
-  .max-size{
-    max-width: 420px;
-  }
-
-  .btn-square {
-    padding: 50%;
-    width: 50%;
-  }
-
-  .replay-icon {
-    background: url("../assets/images/reload.svg") no-repeat center;
-    background-size: 55%;
-    background-color: #E7EEEF;
-  }
-
-  .main-menu-icon {
-    background: url("../assets/images/list.svg") no-repeat center;
-    background-size: 50%;
-    background-color: #E7EEEF;
+    height: 100%;
+    background: #E3E7EC;
+    background: url("../assets/images/background.svg") no-repeat center;
 
   }
 
+  .title-page {
+    font-size: 4.2rem;
+    color: #334860;
+    font-weight: normal;
+  }
 
+  .btn-growth {
+    position: fixed;
+
+    &.country {
+      @include light-blue;
+    }
+
+    &.main-menu {
+      @include light-blue;
+    }
+    .content {
+      max-height: 25vh;
+      box-shadow: 0 0;
+      margin-top: 10%;
+    }
+
+  }
+
+  .logo-container {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+
+  .game-button {
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+
+
+    @mixin icon($image) {
+      .icon {
+        background-image: url("../assets/images/#{$image}.svg");
+      }
+    }
+    $padding: 8px;
+
+    .content {
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+      position: absolute;
+      top: $padding;
+      right: $padding;
+      bottom: $padding;
+      left: $padding;
+
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-end;
+
+      .icon {
+        background: no-repeat center;
+        background-size: 50%;
+        height: 100%;
+      }
+
+      &.replay {
+      //  @include light-blue;
+        background-color: rgba(0, 0, 0, .15);
+        @include icon('reload');
+      }
+      &.main-menu {
+      //  @include light-blue;
+        background-color: rgba(0, 0, 0, .15);
+        @include icon('list');
+      }
+
+
+    }
+  }
 }
