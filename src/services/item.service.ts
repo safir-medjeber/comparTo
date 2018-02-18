@@ -23,7 +23,7 @@ export class ItemService{
   }
 
   public getData(): Observable<Item[]>{
-    return this.httpClient.get("assets/data/dataInput.csv", { responseType: 'text'}).map(data => this.extractData(data));
+    return this.httpClient.get("assets/data/dataInput.scsv", { responseType: 'text'}).map(data => this.extractData(data));
   }
 
   private extractData(csvData: string): Item[] {
@@ -32,7 +32,7 @@ export class ItemService{
 
 
   private serializeData(line: String): Item{
-    let columns =  line.split(',');
+    let columns =  line.split(';');
     return new Item(columns[NAME],columns[URL],Number(columns[VALUE]),columns[THEMATIC],columns[UNIT]);
   }
 
