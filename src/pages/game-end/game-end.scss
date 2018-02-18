@@ -1,3 +1,5 @@
+@import "../../assets/styles/colors";
+
 page-game-end {
 
   .vertical-align-content-page > * {
@@ -7,30 +9,98 @@ page-game-end {
   }
 
   .background-page {
-    background: #72BCC5 linear-gradient(67deg, rgb(184, 221, 226) 0%, rgb(114, 188, 197) 100%);
+    background: #E3E7EC;
+    height: 100%;
   }
 
-  .max-size{
-    max-width: 420px;
+  .btn-rect {
+    &:after {
+      padding-bottom: 50%;
+    }
+    .content {
+      flex-flow: row;
+      justify-content: space-evenly;
+      align-items: center;
+      .icon {
+        flex: 1;
+      }
+      .label {
+        flex: 1;
+        font-size: 4.4rem;
+      }
+    }
+  }
+  .btn-square{
+    &:after {
+      padding-bottom: 100%;
+    }
+    .content {
+      flex-flow: column;
+      justify-content: space-evenly;
+      .label {
+        font-size: 2.2vh;
+      }
+    }
   }
 
-  .btn-square {
-    padding: 50%;
-    width: 50%;
+  $padding: 8px;
+  .btn-square, .btn-rect {
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+    }
+
+    .content {
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+      position: absolute;
+      top: $padding;
+      right: $padding;
+      bottom: $padding;
+      left: $padding;
+
+      display: flex;
+
+      .icon {
+        background: no-repeat center;
+        background-size: contain;
+        height: 50%;
+        svg {
+          height: 100%;
+        }
+      }
+      .label {
+        color: #fff;
+      }
+
+      &.replay {
+        @include green();
+        .icon {
+          background-image: url("../assets/images/reload.svg");
+        }
+      }
+
+      &.main-menu {
+        @include beige();
+        .icon {
+          background-image: url("../assets/images/list.svg");
+        }
+      }
+      &.score {
+        @include yellow();
+        .icon {
+          background-image: url("../assets/images/test.svg");
+        }
+      }
+      &.themeRecord {
+        @include light-blue();
+      }
+      &.record {
+        @include purple-pink();
+      }
+    }
   }
-
-  .replay-icon {
-    background: url("../assets/images/reload.svg") no-repeat center;
-    background-size: 55%;
-    background-color: #E7EEEF;
-  }
-
-  .main-menu-icon {
-    background: url("../assets/images/list.svg") no-repeat center;
-    background-size: 50%;
-    background-color: #E7EEEF;
-
-  }
-
-
 }
