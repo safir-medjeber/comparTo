@@ -20,7 +20,7 @@ page-game-end {
     }
     .content {
       flex-flow: row;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       .icon {
         flex: 1;
@@ -37,7 +37,7 @@ page-game-end {
     }
     .content {
       flex-flow: column;
-      justify-content: space-evenly;
+      justify-content: space-around;
       .label {
         font-size: 2.2vh;
       }
