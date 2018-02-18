@@ -11,9 +11,9 @@
     </ion-row>
 
     <ion-row class="buttons" col-12 col-sm-12 col-md-6 col-lg-4>
-      <ion-grid>
-        <ion-row>
-          <ion-col class="btn-square" col-6 (click)="goToGameStartPage()">
+      <ion-grid @animateEnd>
+        <ion-row @rows>
+          <ion-col class="btn-square" col-6 (click)="goToGameStartPage()" @buttonScale>
             <div class="content record">
               <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 501.55 501.55">
@@ -30,7 +30,7 @@
               <div class="label">Record</div>
             </div>
           </ion-col>
-          <ion-col class="btn-square" col-6 (click)="goToGameStartPage()">
+          <ion-col class="btn-square" col-6 (click)="goToGameStartPage()" @buttonScale>
             <div class="content themeRecord">
               <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508 508" >
@@ -47,22 +47,22 @@
             </div>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col class="btn-rect" col-12>
+        <ion-row @rows>
+          <ion-col class="btn-rect" col-12 @buttonScale>
             <div class="content score">
               <div class="icon"></div>
               <div class="label">{{score}}</div>
             </div>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col class="btn-square" col-6 (click)="goToGamePage(label)">
+        <ion-row @rows>
+          <ion-col class="btn-square" col-6 (click)="goToGamePage(label)" @buttonScale>
             <div class="content replay">
               <div class="icon"></div>
               <div class="label">Rejouer</div>
             </div>
           </ion-col>
-          <ion-col class="btn-square" col-6 (click)="goToGameStartPage()">
+          <ion-col class="btn-square" col-6 (click)="goToGameStartPage()" @buttonScale>
             <div class="content main-menu">
               <div class="icon"></div>
               <div class="label">Menu</div>

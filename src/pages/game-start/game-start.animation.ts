@@ -24,7 +24,11 @@ export const animations = [
       query('@rows', stagger('100ms', [animateChild()]))
     ]),
   ]),
-
+  trigger('animateEnd', [
+    transition('void => *', [
+      query('@rows', stagger('100ms', [animateChild()]))
+    ]),
+  ]),
   trigger('slideUp', [
     transition('void => *', [
       style({transform: 'translateY(380%)'}),
