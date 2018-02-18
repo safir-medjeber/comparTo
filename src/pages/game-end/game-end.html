@@ -1,35 +1,75 @@
 
+<!--<ion-content class="vertical-align-content-page background-page" padding text-center>-->
+  <!--<ion-grid class="max-size">-->
+
+    <!--<ion-row>-->
+      <!--<ion-col padding>-->
+          <!--<span class="title-page">Fin de partie</span>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+
+    <!--<ion-row >-->
+      <!--<ion-col class="game-button"  col-12 col-sm-12 col-md-12 col-lg-6  col-xl-6>-->
+        <!--<div class="content replay" (click)="goToGamePage(label)">-->
+          <!--<game-end-information [gameInfo]="'record'" [value]=this.record></game-end-information>-->
+          <!--<game-end-information [gameInfo]="'score'" [value]=this.score></game-end-information>-->
+        <!--</div>-->
+      <!--</ion-col>-->
+      <!--<ion-col class="game-button"  col-6 col-sm-6 col-md-6 col-lg-6  col-xl-6>-->
+        <!--<div class="content replay" (click)="goToGamePage(label)">-->
+          <!--<div class="icon"></div>-->
+        <!--</div>-->
+      <!--</ion-col>-->
+      <!--<ion-col class="game-button"  col-6 col-sm-6 col-md-6 col-lg-6  col-xl-6>-->
+        <!--<div class="content main-menu" (click)="goToGameStartPage()">-->
+          <!--<div class="icon"></div>-->
+        <!--</div>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+  <!--</ion-grid>-->
+<!--</ion-content>-->
+
 <ion-content class="vertical-align-content-page background-page" padding text-center>
-  <ion-grid class="max-size">
+  <div class="vertical-align-content-page background-page" text-center padding>
+    <ion-grid [@animate]="state" >
+      <ion-row>
+        <ion-col padding>
+          <div [@slideUp]="state">
+            <span class="title-page">Fin de partie</span>
+          </div>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col padding>
-          <span class="title-page">Fin de partie</span>
-      </ion-col>
-    </ion-row>
+      <ion-row class="buttons" col-12 col-sm-12 col-md-6 col-lg-4>
+        <ion-grid>
+          <ion-row >
+            <ion-col class="game-button" col-12 @buttonScale>
+              <div #button class="content country">
+                <div class="icon"></div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-row>
 
-    <ion-row >
-      <ion-col class="game-button"  col-12 col-sm-12 col-md-12 col-lg-6  col-xl-6>
-        <div class="content replay" (click)="goToGamePage(label)">
-          <game-end-information [gameInfo]="'record'" [value]=this.record></game-end-information>
-          <game-end-information [gameInfo]="'score'" [value]=this.score></game-end-information>
-        </div>
-      </ion-col>
-      <ion-col class="game-button"  col-6 col-sm-6 col-md-6 col-lg-6  col-xl-6>
-        <div class="content replay" (click)="goToGamePage(label)">
-          <div class="icon"></div>
-        </div>
-      </ion-col>
-      <ion-col class="game-button"  col-6 col-sm-6 col-md-6 col-lg-6  col-xl-6>
-        <div class="content main-menu" (click)="goToGameStartPage()">
-          <div class="icon"></div>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <ion-row class="buttons" col-12 col-sm-12 col-md-6 col-lg-4>
+        <ion-grid>
+          <ion-row *ngFor="let chunk of chunkedTheme" @rows>
+            <ion-col class="game-button" *ngFor="let theme of chunk" col-6 @buttonScale>
+              <div #button class="content {{theme}}">
+                <div class="icon"></div>
+                <!--<div class="label">{{getTheme[theme].label}}</div>-->
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+
 </ion-content>
-
-
 
 
 

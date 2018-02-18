@@ -69,43 +69,13 @@ page-game-end {
     height: 100%;
     background: #E3E7EC;
     background: url("../assets/images/background.svg") no-repeat center;
-
   }
 
   .title-page {
-    font-size: 4.2rem;
+    font-size: 4.4rem;
     color: #334860;
     font-weight: normal;
   }
-
-  .btn-growth {
-    position: fixed;
-
-    &.country {
-      @include light-blue;
-    }
-
-    &.main-menu {
-      @include light-blue;
-    }
-    .content {
-      max-height: 25vh;
-      box-shadow: 0 0;
-      margin-top: 10%;
-    }
-
-  }
-
-  .logo-container {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
-  }
-
 
   .game-button {
     position: relative;
@@ -116,7 +86,9 @@ page-game-end {
       padding-bottom: 100%;
     }
 
+    .content {
 
+    }
 
     @mixin icon($image) {
       .icon {
@@ -141,21 +113,38 @@ page-game-end {
 
       .icon {
         background: no-repeat center;
-        background-size: 50%;
+        background-size: 60%;
         height: 100%;
       }
 
-      &.replay {
-      //  @include light-blue;
-        background-color: rgba(0, 0, 0, .15);
-        @include icon('reload');
-      }
-      &.main-menu {
-      //  @include light-blue;
-        background-color: rgba(0, 0, 0, .15);
-        @include icon('list');
+      .label {
+        color: #fff;
+        padding: 4% 0;
+        font-size: 2.6vh;
       }
 
+
+
+      &.country {
+        @include icon('earth-globe');
+        background-color: rgba(0, 0, 0, .2);
+      }
+
+      &.globalRecord {
+        background-color: rgba(0, 0, 0, .2);
+      }
+      &.localRecord {
+        background-color: rgba(0, 0, 0, .2);
+      }
+      &.currentRecord {
+        background-color: rgba(0, 0, 0, .2);
+      }
+      &.replay {
+        background-color: rgba(0, 0, 0, .2);
+      }
+      &.mainMenu {
+        background-color: rgba(0, 0, 0, .2);
+      }
 
     }
   }
