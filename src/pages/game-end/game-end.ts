@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
+import {Events, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
-import {Item} from "../../model/Item";
-import {ItemService} from "../../services/item.service";
+import {GameService} from "../../services/game.service";
+import {Theme} from "../../model/Theme";
 
 
 @IonicPage()
@@ -13,15 +13,21 @@ import {ItemService} from "../../services/item.service";
 })
 
 export class GameEndPage implements OnInit{
-
   score: number;
   record: number;
-  private itemsByThematic: Item[];
+  themeRecord: number;
+  private theme: Theme;
 
 
-  constructor(private navCtrl: NavController, private viewCtrl: ViewController, private navParams: NavParams, private storage: Storage) {
-    this.score = this.navParams.get('scoreParam');
-    this.itemsByThematic = this.navParams.get('thematicParam');
+  constructor(
+    private gameService: GameService,
+    private navCtrl: NavController,
+    private navParams: NavParams,
+    private storage: Storage,
+    private events:Events,
+  ) {
+    this.theme = this.gameService.getTheme();
+    this.score = this.navParams.get('scoreParam') || 0;
   }
 
   ngOnInit(): void {
@@ -29,34 +35,27 @@ export class GameEndPage implements OnInit{
   }
 
   private determineRecord(): void {
-    this.storage.get('record').then((previousRecord) => {
-      if(previousRecord == null  || previousRecord < this.score )
-        this.setNewRecord();
-      else
-        this.record = previousRecord;
+    Promise.all([
+      this.storage.get('record'),
+      this.storage.get('record' + this.theme)
+    ]).then(([record, themeRecord]) => {
+      this.record = Math.max(record || 0, this.score)
+      this.themeRecord = Math.max(themeRecord || 0, this.score)
+      this.setRecord();
     });
   }
 
-  private setNewRecord(): void {
-    this.storage.set('record', this.score).then(() => {
-      this.record = this.score;
-      console.log('Your record is', this.record);
-    });
-  }
-
-
-  private resetRecord(): void {
-    this.storage.clear().then(() => {
-      this.navCtrl.push('GamePage', {thematicParam: this.itemsByThematic});
-    });
+  private setRecord(): void {
+    this.storage.set('record', this.record),
+    this.storage.set('record' + this.theme, this.themeRecord)
   }
 
   public goToGamePage():void {
-    this.navCtrl.push('GamePage', {scoreParam: this.score, thematicParam: this.itemsByThematic})
-      .then(() => this.navCtrl.remove(this.viewCtrl.index));
+    this.navCtrl.push('GamePage')
   }
 
   goToGameStartPage(){
+    this.events.publish('reloadScores');
     this.navCtrl.popToRoot();
   }
 
