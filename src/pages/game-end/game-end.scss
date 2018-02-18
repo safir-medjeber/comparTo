@@ -9,8 +9,9 @@ page-game-end {
   }
 
   .background-page {
-    background: #E3E7EC;
     height: 100%;
+    background: #E3E7EC;
+    background: url("../assets/images/background.svg") no-repeat center;
   }
 
   .btn-rect {
