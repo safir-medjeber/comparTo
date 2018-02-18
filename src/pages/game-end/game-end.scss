@@ -1,68 +1,11 @@
+@import "../../assets/styles/colors";
+
 page-game-end {
 
-  .grid {
-    max-height: 100%;
-  }
-
-  .buttons {
-    margin: auto;
-    flex: 1;
-  }
-
-  @mixin color($from, $to) {
-    background: $from;
-    background: linear-gradient(165deg, $from 0%, $from 45%, $to 45%, $to 100%);
-    .score {
-      text {
-        fill: $from;
-        font-size: 12px;
-      }
-    }
-  }
-  @mixin light-green {
-    @include color(#9FB52A, #A7BA38);
-  }
-  @mixin green {
-    @include color(#4EAE5B, #5CB56D);
-  }
-  @mixin dark-green {
-    @include color(#3B5E3F, #446649);
-  }
-  @mixin light-blue {
-    @include color(#94ACD7, #9DB3DB);
-  }
-  @mixin blue {
-    @include color(#3184C2, #3A89C5);
-  }
-  @mixin dark-blue {
-    @include color(#396376, #426B7C);
-  }
-  @mixin purple-blue {
-    @include color(#4C4CA7, #5454AB);
-  }
-  @mixin purple {
-    @include color(#834FB4, #8956B7);
-  }
-  @mixin purple-pink {
-    @include color(#CF659F, #D16FA5);
-  }
-  @mixin pink {
-    @include color(#EB7375, #EC7D80);
-  }
-  @mixin red {
-    @include color(#C03F2D, #C34938);
-  }
-  @mixin orange {
-    @include color(#EB812E, #ED893A);
-  }
-  @mixin yellow {
-    @include color(#FFAA36, #FFB345);
-  }
-  @mixin beige {
-    @include color(#D9C293, #DCC89E);
-  }
-  @mixin gray {
-    @include color(#7F8B8E, #869194);
+  .vertical-align-content-page > * {
+    display: flex !important;
+    align-content: center !important;
+    align-items: center !important;
   }
 
   .background-page {
@@ -70,32 +13,44 @@ page-game-end {
     background: #E3E7EC;
     background: url("../assets/images/background.svg") no-repeat center;
   }
-
-  .title-page {
-    font-size: 4.4rem;
-    color: #334860;
-    font-weight: normal;
+  .btn-rect {
+    &:after {
+      padding-bottom: 50%;
+    }
+    .content {
+      flex-flow: row;
+      justify-content: space-evenly;
+      align-items: center;
+      .icon {
+        flex: 1;
+      }
+      .label {
+        flex: 1;
+        font-size: 4.4rem;
+      }
+    }
+  }
+  .btn-square{
+    &:after {
+      padding-bottom: 100%;
+    }
+    .content {
+      flex-flow: column;
+      justify-content: space-evenly;
+      .label {
+        font-size: 2.2vh;
+      }
+    }
   }
 
-  .game-button {
+  $padding: 8px;
+  .btn-square, .btn-rect {
     position: relative;
 
     &:after {
       content: "";
       display: block;
-      padding-bottom: 100%;
     }
-
-    .content {
-
-    }
-
-    @mixin icon($image) {
-      .icon {
-        background-image: url("../assets/images/#{$image}.svg");
-      }
-    }
-    $padding: 8px;
 
     .content {
       border-radius: 5px;
@@ -108,44 +63,44 @@ page-game-end {
       left: $padding;
 
       display: flex;
-      flex-flow: column;
-      justify-content: flex-end;
 
       .icon {
         background: no-repeat center;
-        background-size: 60%;
-        height: 100%;
+        background-size: contain;
+        height: 50%;
+        svg {
+          height: 100%;
+        }
       }
-
       .label {
         color: #fff;
-        padding: 4% 0;
-        font-size: 2.6vh;
       }
 
-
-
-      &.country {
-        @include icon('earth-globe');
-        background-color: rgba(0, 0, 0, .2);
-      }
-
-      &.globalRecord {
-        background-color: rgba(0, 0, 0, .2);
-      }
-      &.localRecord {
-        background-color: rgba(0, 0, 0, .2);
-      }
-      &.currentRecord {
-        background-color: rgba(0, 0, 0, .2);
-      }
       &.replay {
-        background-color: rgba(0, 0, 0, .2);
-      }
-      &.mainMenu {
-        background-color: rgba(0, 0, 0, .2);
+        @include green();
+        .icon {
+          background-image: url("../assets/images/reload.svg");
+        }
       }
 
+      &.main-menu {
+        @include beige();
+        .icon {
+          background-image: url("../assets/images/list.svg");
+        }
+      }
+      &.score {
+        @include yellow();
+        .icon {
+          background-image: url("../assets/images/test.svg");
+        }
+      }
+      &.themeRecord {
+        @include light-blue();
+      }
+      &.record {
+        @include purple-pink();
+      }
     }
   }
 }
