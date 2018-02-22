@@ -45,7 +45,7 @@ export class GameStartPage {
     style.width = bounds.width + "px";
     style.height = bounds.height + "px";
     this.e.nativeElement.innerHTML = button.outerHTML
-    this.e.nativeElement.className = "btn-growth" + label
+    this.e.nativeElement.className = "btn-growth " + label
     this.click = true;
 
 
