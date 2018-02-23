@@ -13,7 +13,9 @@ export class MyApp {
   constructor(platform: Platform, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       splashScreen.hide();
-    });
+
+      platform.registerBackButtonAction(() => {})
+    })
   }
 }
 

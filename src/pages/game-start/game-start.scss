@@ -1,3 +1,5 @@
+@import "../../assets/styles/colors";
+
 page-game-start {
 
   .grid {
@@ -9,35 +11,10 @@ page-game-start {
     flex: 1;
   }
 
-  @mixin color($from, $to) {
-    background: $from;
-    background: linear-gradient(165deg, $from 0%, $from 45%,$to 45%,$to 100%);
-    .score {
-      text {
-        fill: $from;
-        font-size: 12px;
-      }
-    }
-  }
-  @mixin light-green { @include color(#9FB52A, #A7BA38); }
-  @mixin green { @include color(#4EAE5B, #5CB56D); }
-  @mixin dark-green { @include color(#3B5E3F, #446649); }
-  @mixin light-blue { @include color(#94ACD7, #9DB3DB); }
-  @mixin blue { @include color(#3184C2, #3A89C5); }
-  @mixin dark-blue { @include color(#396376, #426B7C); }
-  @mixin purple-blue { @include color(#4C4CA7, #5454AB); }
-  @mixin purple { @include color(#834FB4, #8956B7); }
-  @mixin purple-pink { @include color(#CF659F, #D16FA5); }
-  @mixin pink { @include color(#EB7375, #EC7D80); }
-  @mixin red { @include color(#C03F2D, #C34938); }
-  @mixin orange { @include color(#EB812E, #ED893A); }
-  @mixin yellow { @include color(#FFAA36, #FFB345); }
-  @mixin beige { @include color(#D9C293, #DCC89E); }
-  @mixin gray { @include color(#7F8B8E, #869194); }
-
   .background-page {
     height: 100%;
     background: #E3E7EC;
+    background: url("../assets/images/background.svg") no-repeat center;
   }
 
   .title-page {
@@ -166,7 +143,7 @@ page-game-start {
 
       .label {
         color: #fff;
-        padding: 4% 0;
+        padding: .25em 0;
         font-size: 2.2vh;
       }
 

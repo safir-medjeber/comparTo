@@ -3,16 +3,15 @@ import {Events, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {GameService} from "../../services/game.service";
 import {Theme} from "../../model/Theme";
+import {animations} from "../game-start/game-start.animation";
 
 
 @IonicPage()
 @Component({
   selector: 'page-game-end',
   templateUrl: 'game-end.html',
-
-})
-
-export class GameEndPage implements OnInit{
+  animations: animations
+}) export class GameEndPage implements OnInit {
   score: number;
   record: number;
   themeRecord: number;
