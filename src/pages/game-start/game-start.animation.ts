@@ -2,7 +2,7 @@ import {transition, trigger, stagger, style, animate, keyframes, query, animateC
 
 const animeChild = child => query(child, [animateChild()])
 const fadeIn = keyframes([
-  style({opacity: 0}),
+  style({opacity: 1}),
   style({opacity: 1})
 ]);
 
@@ -32,7 +32,7 @@ export const animations = [
   trigger('slideUp', [
     transition('void => *', [
       style({transform: 'translateY(380%)'}),
-      animate('150ms ease', fadeIn),
+      animate('2000ms ease', fadeIn),
       animate('250ms 500ms',
         keyframes([
           style({transform: 'translateY(380%)'}),
@@ -45,7 +45,7 @@ export const animations = [
     state('*', style({opacity: 0})),
     transition('void => *', [
       style({transform: 'translateY(200%)'}),
-      animate('150ms ease', fadeIn),
+      animate('2000ms ease', fadeIn),
       animate('250ms 500ms',
         keyframes([
           style({opacity: 1, transform: 'translateY(200%)'}),
