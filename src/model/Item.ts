@@ -1,16 +1,12 @@
+import {getTheme, Theme, ThemeProps} from "./Theme";
+
 export class Item {
-  name: string;
-  url: string;
-  value: number;
-  thematic: string;
-  unit: string;
-
-
-  constructor(name: string, url: string, value: number, thematic: string, unit: string) {
-    this.name = name;
-    this.url = url;
-    this.value = value;
-    this.thematic = thematic;
-    this.unit = unit;
+  public readonly theme: ThemeProps
+  constructor(
+    public readonly name: string,
+    public readonly url: string,
+    public readonly value: number,
+    public readonly thematic: Theme) {
+      this.theme = getTheme[thematic]
   }
 }
