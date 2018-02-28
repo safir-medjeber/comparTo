@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
-import {MOCK_ITEMS} from "../../services/mock-items";
 import {Question} from "../../model/Question";
 import {GameRulesService, GameState} from "../../services/gameRules.service";
 import {GameService} from "../../services/game.service";
@@ -43,7 +42,7 @@ export class GamePage {
             this.reset();
             this.lastQuestion = this.currentQuestion;
             this.getQuestion()
-          }, 2500)
+          }, 2350)
         }
         break;
       case GameState.Questioning:

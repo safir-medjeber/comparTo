@@ -1,6 +1,5 @@
 import {transition, trigger, stagger, style, animate, keyframes, query, animateChild, state, group} from "@angular/animations";
 
-const animeChild = child => query(child, [animateChild()])
 const fadeIn = keyframes([
   style({opacity: 1}),
   style({opacity: 1})
@@ -18,8 +17,8 @@ export const animations = [
   trigger('animate', [
     transition('void => *', [
       group([
-        animeChild('@slideUp'),
-        animeChild('@slideDown')
+        query('@slideUp', [animateChild()]),
+        query('@slideDown', [animateChild()])
       ]),
       query('@rows', stagger('100ms', [animateChild()]))
     ]),
