@@ -3,7 +3,6 @@ import {IonicPageModule} from "ionic-angular";
 import {GamePage} from "./game";
 
 import {ItemComponent} from "./item/item.component";
-import {CounterComponent} from "../../components/counter.component";
 import {WaterBubbleComponent} from "./water-bubble/water-bubble.component";
 import {QuestionComponent, WrightComponent, WrongComponent} from "./question/question.component";
 import {ScoreComponent} from "./score/score.component";
@@ -16,7 +15,6 @@ import {ScoreComponent} from "./score/score.component";
     WrightComponent,
     QuestionComponent,
     WaterBubbleComponent,
-    CounterComponent,
     ScoreComponent
   ],
   imports: [

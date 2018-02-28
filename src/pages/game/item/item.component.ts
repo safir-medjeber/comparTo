@@ -15,8 +15,8 @@ import {getTheme, Theme, ThemeProps} from "../../../model/Theme";
         <div class="name">{{item.name}}</div>
         <div class="value">
           <div *ngIf="showValue">
-            <animated-counter  [value]="item.value"></animated-counter>
-            <span class="unit">{{item.unit}}</span>
+            <span>{{item.value  | number:item.theme.unit.format}}</span>
+            <span class="unit">{{item.theme.unit.label}}</span>
             
           </div>
         </div>

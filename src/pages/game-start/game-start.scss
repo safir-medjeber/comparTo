@@ -1,5 +1,12 @@
 @import "../../assets/styles/colors";
 
+.title-page {
+  font-size: 4.4rem;
+  color: #334860;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
 page-game-start {
 
   .grid {
@@ -15,12 +22,6 @@ page-game-start {
     height: 100%;
     background: #E3E7EC;
     background: url("../assets/images/background.svg") no-repeat center;
-  }
-
-  .title-page {
-    font-size: 4.4rem;
-    color: #334860;
-    font-weight: normal;
   }
 
   .btn-growth {

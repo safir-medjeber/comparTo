@@ -4,6 +4,7 @@ import {Item} from "../model/Item";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/filter";
+import {Theme} from "../model/Theme";
 
 
 
@@ -33,7 +34,8 @@ export class ItemService{
 
   private serializeData(line: String): Item{
     let columns =  line.split(';');
-    return new Item(columns[NAME],columns[URL],Number(columns[VALUE]),columns[THEMATIC],columns[UNIT]);
+    let theme = (<Theme>columns[THEMATIC]);
+    return new Item(columns[NAME],columns[URL],Number(columns[VALUE]), theme);
   }
 
 
