@@ -31,7 +31,7 @@ export const animations = [
   trigger('slideUp', [
     transition('void => *', [
       style({transform: 'translateY(380%)'}),
-      animate('2000ms ease', fadeIn),
+      animate('1500ms ease', fadeIn),
       animate('250ms 500ms',
         keyframes([
           style({transform: 'translateY(380%)'}),
@@ -44,7 +44,7 @@ export const animations = [
     state('*', style({opacity: 0})),
     transition('void => *', [
       style({transform: 'translateY(200%)'}),
-      animate('2000ms ease', fadeIn),
+      animate('1500ms ease', fadeIn),
       animate('250ms 500ms',
         keyframes([
           style({opacity: 1, transform: 'translateY(200%)'}),
