@@ -21,17 +21,17 @@
     &:after {
       content: "";
       @include absolute;
-      background-color: rgba(0, 0, 0, .5);
+      background-color: rgba(0, 0, 0, .3);
     }
   }
 
   &.withMiniature {
     .background-wrapper .background {
-      left: -8px;
-      top: -8px;
-      right: -8px;
-      bottom: -8px;
-      filter: blur(8px);
+      left: -5px;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      filter: blur(5px);
     }
     .content {
       .image {

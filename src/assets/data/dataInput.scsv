@@ -208,8 +208,8 @@ Fernsehturm - Berlin;https://static01.nyt.com/images/2017/04/09/magazine/09lor/0
 Tour Eiffel - Paris;https://img.aws.la-croix.com/2017/03/28/1200835422/Vue-Tour-Eiffel-octobre-2015_0_1399_931.jpg;324;building;mètres
 Burj Al Arab Jumeirah - Dubaï;https://media-cdn.tripadvisor.com/media/photo-s/0e/b3/5d/03/burj-al-arab-jumeirah.jpg;321;building;mètres
 Istanbul Sapphire - Istanbul;https://media-cdn.tripadvisor.com/media/photo-s/06/af/ee/8d/istanbul-sapphire.jpg;261;building;mètres
-Tour Montparnasse - Paris;https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Tour_montparnasse_view_arc.jpg/260px-Tour_montparnasse_view_arc.jpg;210;building;mètres
-Bouddha du Temple de la Source - Zhaocun;https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Spring_Temple_Buddha_picturing_Vairocana%2C_in_Lushan_County%2C_Henan%2C_China.png/391px-Spring_Temple_Buddha_picturing_Vairocana%2C_in_Lushan_County%2C_Henan%2C_China.png;208;building;mètres
+Tour Montparnasse - Paris;https://o.aolcdn.com/images/dims3/GLOB/legacy_thumbnail/630x315/format/jpg/quality/85/http%3A%2F%2Fi.huffpost.com%2Fgen%2F1196401%2Fimages%2Fh-TOUR-MONTPARNASSE-40-ANS-628x314.jpg;210;building;mètres
+Bouddha du Temple de la Source - Zhaocun;https://boutique.ping-deco.fr/blog/wp-content/uploads/2016/04/Le-Bouddha-du-Temple-de-la-Source.png;208;building;mètres
 Trump Tower - New york;https://static01.nyt.com/images/2017/08/04/us/04DC-SECRETSERVICE-01/04DC-SECRETSERVICE-01-master768.jpg;202;building;mètres
 Space Needle - Seatle;https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2014/07/25/101867425-space-needle.1910x1000.jpg;184.4;building;mètres
 Pyramides de khéops - Le Caire;https://upload.wikimedia.org/wikipedia/commons/5/56/Pyramide_Kheops.JPG;139;building;mètres
@@ -222,12 +222,20 @@ Taj Mahal - Agra;https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_M
 Tower Bridge - Londres;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Tower_Bridge_%28aerial_view%29.jpg/1024px-Tower_Bridge_%28aerial_view%29.jpg;65;building;mètres
 Opéra de Sydney - Sydney;https://www.opera-online.com/media/images/picture/article/0000/0497/1962/xl_sydneyop3.jpg?1471535769;65;building;mètres
 Tour de pise - Pise;http://image-photos.linternaute.com/image_photo/450/1274545409/1149533.jpg;58.36;building;mètres
-Basilique Sainte-Sophie;https://i1.wp.com/www.toutistanbul.com/wp-content/uploads/2015/12/istanbul-catedrala-sfanta-sofia-ar-putea-redeveni-moschee-51153-1.jpg?resize=600%2C450;55.6;building;mètres
+Basilique Sainte-Sophie - Istanbul;https://i1.wp.com/www.toutistanbul.com/wp-content/uploads/2015/12/istanbul-catedrala-sfanta-sofia-ar-putea-redeveni-moschee-51153-1.jpg?resize=600%2C450;55.6;building;mètres
 Colisée - Rome;https://culturebox.francetvinfo.fr/sites/default/files/filefield_paths/colisee_rome.jpg;54;building;mètres
-Colonne de Juillet - Paris;https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Colonne_de_Juillet_972.jpg/800px-Colonne_de_Juillet_972.jpg;50.52;building;mètres
+Colonne de Juillet - Paris;http://www.aviewoncities.com/img/paris/kvefr1085s.jpg;50.52;building;mètres
 Arc de Triomphe - Paris;https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Arc_de_Triomphe%2C_Paris_21_October_2010.jpg/800px-Arc_de_Triomphe%2C_Paris_21_October_2010.jpg;50;building;mètres
 Christ Rédempteur - Rio;https://upload.wikimedia.org/wikipedia/commons/4/47/Cristo_Redentor_Rio_de_Janeiro_4.jpg;38;building;mètres
 L'obélisque de Louxor - Paris;https://upload.wikimedia.org/wikipedia/commons/4/41/Place_de_la_concorde.jpg;23;building;mètres
+Pyramide du Louvre - Paris;https://www.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_230/le-louvre-pyramide-cour-napol%C3%A9on-nuit-%7C-630x405-%7C-%C2%A9-thinkstock/37520-1-fre-FR/Le-Louvre-pyramide-cour-Napol%C3%A9on-nuit-%7C-630x405-%7C-%C2%A9-Thinkstock.jpg;21;building;mètres
+Pont du Golden Gate - San Fransisco;https://www.okvoyage.com/wp-content/uploads/2015/05/golden-gate-bridge-07.jpg;67;building;mètres
+Ahu Tongariki - Ile de Pâques;https://i0.wp.com/buenosviajes.net/wp-content/uploads/2017/02/IMG_1541.jpg?resize=665%2C444;9;building;mètres
+Sphinx de Gizeh - Le Caire;https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/3124/SITours/excursion-priv-e-pyramides-de-gizeh-et-le-sphinx-in-cairo-124917.jpg;20;building;mètres
+Pyramide de Kukulcán - Yucatàn;https://media-cdn.tripadvisor.com/media/photo-s/02/e5/a1/a9/piramide-de-kukulkan.jpg;33.33;building;mètres
+L'Atomium - Bruxelles;http://www.duvoyage.com/images/voyage/photo-atomium-254.jpg;102;building;mètres
+Pont du Gard - Vers-Pont-du-Gard;https://www.kayakvert.com/images/pdg/le_pont_gard.jpg;48;building;mètres
+Viaduc de Millau - Millau;http://img-4.linternaute.com/T8DJzw_qMIHrPPmbADo1FwPlHow=/fit-in/620x/smart/f2e461e0a5f246d599332eb147125f5a/ccmcms-linternaute/1078179.jpg;343;building;mètres
 Alfa Romeo Giulietta;http://res.cloudinary.com/sparkgames/image/upload/c_scale,w500/v1518126122/Alfa%20Romeo%20Giulietta.jpg;244;car;km/h
 Aston Martin DB7;http://res.cloudinary.com/sparkgames/image/upload/c_scale,w500/v1518126608/db11.jpg;322;car;km/h
 BMW 3 Series;http://res.cloudinary.com/sparkgames/image/upload/c_scale,w500/v1518126818/bmwserie3.jpg;250;car;km/h
@@ -342,14 +350,13 @@ Stamford Bridge - Londres;http://fr.uefa.com/MultimediaFiles/Photo/competitions/
 Juventus Stadium - Turin;http://www.juvefc.com/wp-content/uploads/2014/09/visiting.jpg;41000;stadium;places
 Matmut Stadium Gerland - Lyon;https://media-cdn.tripadvisor.com/media/photo-s/0a/5f/94/c4/lyon-x-tottenham.jpg;35029;stadium;places
 Stade Charléty - Paris;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Stade_Charl%C3%A9ty_Paris_France.jpg/651px-Stade_Charl%C3%A9ty_Paris_France.jpg;19141;stadium;places
-Big Mac;https://ws.mcdonalds.fr/media/90/1c/c8/901cc88939c44478eb2e999d8b60815d65907452;4.35;food;€
-Royal Cheese;https://ws.mcdonalds.fr/media/b1/b4/0a/b1b40a6ac687045360898c4bcffdf9601b951079;4.50;food;€
-McWrap Chèvre        ;https://ws.mcdonalds.fr/media/65/32/2f/65322f6bbb3c322fd390ac44f95971ffdfc879c0;4.75;food;€
-McChicken;https://ws.mcdonalds.fr/media/02/83/b5/0283b5a662db5a04ff689f7f058825e57222dd25;4.30;food;€
+Big Mac;https://img.plusdebonsplans.com/2017/04/big-mac-mcdo.jpg;4.35;food;€
+Royal Cheese;https://i.pinimg.com/736x/78/15/63/781563e952f1faf2daec87e663547495--weightwatcher-weight-watcher-recipes.jpg;4.50;food;€
+McWrap Chèvre;https://media.meltystyle.fr/article-2835542-facebook-f64690760/mcdonald-s-mcwrap-chevre-retour-carte-menu.jpg;4.75;food;€
+McChicken;http://3.bp.blogspot.com/__rkPLGz_xzk/SEGnzUYWuAI/AAAAAAAAASA/1DyuiEl2JJs/s320/1011l.jpg;4.30;food;€
 Chicken McNuggets 6Mx        ;https://mcdonalds.co.nz/sites/mcdonalds.co.nz/files/hero_pdt_6_nuggets_no_sauce.png;4.15;food;€
-Filet-O-Fish;https://ws.mcdonalds.fr/media/cf/02/31/cf02315b7c483cfc7db155c8f4ab60f92122f80c;3.75;food;€
-Double Cheese;https://ws.mcdonalds.fr/media/30/e4/ed/30e4edd3d17d8e4fdd52fe8d020afe6e2740d140;3.05;food;€
-Hamburger    ;https://ws.mcdonalds.fr/media/33/f9/a4/33f9a4186a60ce68de1b3805f595358a738c85bb;1.90;food;€
+Filet-O-Fish;http://www.celame.fr/294-large_default/filet-o-fish-colin-d-alaska-100g.jpg;3.75;food;€
+Hamburger;https://cdn-triplem.scadigital.io/media/29946/cheeseburger.jpg?preset=MainImage;1.90;food;€
 Happy Meal ;http://www.giftingway.com/image/cache/catalog/mcdonald-s-happy-meal-for-2-kids-337-750x750.jpg;4.00;food;€
 SUB 30 - Steak Végétarien        ;http://subwayfrance.fr/uploads/products/picts/380x-_1507c-s15-steak-vege.jpg;7.20;food;€
 SUB 30 - Poulet Teriyaki;http://subwayfrance.fr/uploads/products/picts/380x-_6258f-teriyaki-6gr.jpg;7.70;food;€
@@ -368,3 +375,8 @@ SUB 30 - Steak & Cheese;http://subwayfrance.fr/uploads/products/picts/380x-_2803
 Une salade;http://www.combien-coute.net/site/thumb.php?src=/site/images/budget/salade.jpg&w=300&h=300;1.03;food;€
 Une bouteille d'eau;http://www.combien-coute.net/site/thumb.php?src=/site/images/budget/bouteille-eau.jpg&w=300&h=300;0.62;food;€
 Rôti de bœuf de 1 kg;http://www.combien-coute.net/site/thumb.php?src=/site/images/budget/boeuf.jpg&w=300&h=300;15.72;food;€
+5 chouquettes;http://static.750g.com/images/600-600/9bd3ff5598361d0b7bb5bfc210a3c26f/chouquettes.png;1.00;food;€
+Un chausson aux pommes;http://static.750g.com/images/622-auto/cb59135d8df2520720cf0b120f4d5919/chausson-aux-pommes-a-la-cannelle.jpeg;1.20;food;€
+Un croissant;https://www.cookomix.com/wp-content/uploads/2016/10/croissants-thermomix-800x600.jpg;0.80;food;€
+Un pain au chocolat;https://www.grands-meres.net/wp-content/uploads/2014/05/pains-au-chocolat.jpg;1.00;food;€
+Un pain aux raisins;http://www.croustipain.ma/wp-content/uploads/2014/12/3_pain_raisins_450x300.jpg;1.20;food;€
