@@ -1,0 +1,180 @@
+@import "../../assets/styles/colors";
+
+.title-page {
+  font-size: 4.4rem;
+  color: #334860;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+page-game-start {
+
+  .grid {
+    max-height: 100%;
+  }
+
+  .buttons {
+    margin: auto;
+    flex: 1;
+  }
+
+  .background-page {
+    height: 100%;
+    background: #E3E7EC;
+    background: url("../assets/images/background.svg") no-repeat center;
+  }
+
+  .btn-growth {
+    position: fixed;
+
+    &.country {  @include light-blue;  }
+    &.food {  @include purple;  }
+    &.building {  @include blue;  }
+    &.car {  @include red();  }
+    &.stadium {  @include light-green;  }
+
+    .content {
+      max-height: 25vh;
+      box-shadow: 0 0;
+      margin-top: 10%;
+
+      .score {
+        opacity: 0;
+      }
+      .label {
+        animation: fontsize 400ms ease;
+        font-size: 4vh;
+
+        @keyframes fontsize {
+          0%{
+            font-size: 2.2vh;
+          }
+          100%{
+            font-size: 4vh;
+          }
+        }
+      }
+    }
+    .question {
+      opacity: 1;
+      animation: fadein 400ms ease;
+
+      @keyframes fadein {
+        0%{
+          opacity: 0;
+        }
+        50%{
+          opacity: 0;
+          transform: translateY(25%);
+        }
+        100%{
+          opacity: 1;
+          transform: translateY(-25%);
+        }
+      }
+    }
+
+  }
+
+  .logo-container {
+   position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo-icon {
+    background: url("../assets/images/logo.svg") no-repeat center;
+    background-size: 80%;
+    //background-color: rgba(255, 255, 255, .65);
+  }
+
+
+  .game-button {
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    .content {
+      &.country {  @include light-blue;  }
+      &.food {  @include purple;  }
+      &.building {  @include blue;  }
+      &.car {  @include red();  }
+      &.stadium {  @include light-green;  }
+    }
+
+    .question {
+      display: none;
+    }
+  }
+
+    @mixin icon($image) {
+      .icon {
+          background-image: url("../assets/images/#{$image}.svg");
+      }
+    }
+    $padding: 8px;
+
+    .content {
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+      position: absolute;
+      top: $padding;
+      right: $padding;
+      bottom: $padding;
+      left: $padding;
+
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-end;
+
+      .icon {
+        background: no-repeat center;
+        background-size: contain;
+        height: 60%;
+      }
+
+      .label {
+        color: #fff;
+        padding: .25em 0;
+        font-size: 2.2vh;
+      }
+
+      .score {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        height: 18%;
+        width: 20%;
+        svg {
+          height: 100%;
+        }
+      }
+
+      .question {
+        position: fixed;
+        top: 50%;
+        left: 5vw;
+        right: 5vw;
+        width: 90vw;
+        transform: translateY(-25%);
+        color: white;
+        font-size: 8vh;
+        font-weight: 700;
+      }
+
+      &.country {  @include icon('earth-globe');  }
+      &.food {  @include icon('doughnut');  }
+      &.building {  @include icon('city');  }
+      &.car {  @include icon('steering');  }
+      &.stadium {  @include icon('soccer');  }
+  }
+}

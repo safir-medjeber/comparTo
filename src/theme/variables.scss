@@ -34,11 +34,15 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:            #488aff,
+  secondary:          #32db64,
+  danger:             #f53d3d,
+  light:              #f4f4f4,
+  dark:               #222,
+  custom-white:       #f6f2f1,
+  custom-blue:        #78C0E0,
+  custom-light-blue:  #ffffff
+
 );
 
 
@@ -84,5 +88,16 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+//@import "roboto";
+//@import "noto-sans";
+
+
+@import "../assets/fonts/raleway";
+$font-family-md-base: "Raleway";
+$font-family-ios-base: "Raleway";
+$font-family-wp-base: "Raleway";
+
+// Buble size
+
+$buble-size: 12vh;
+$buble-shadow: 7vh;
