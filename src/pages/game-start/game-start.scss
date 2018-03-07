@@ -74,6 +74,50 @@ page-game-start {
       }
     }
 
+    .loader {
+      position: absolute;
+      bottom: 15%;
+      left: 0;
+      right: 0;
+
+      border-radius: 100%;
+      width: 8vh;
+      height: 8vh;
+      margin: auto;
+    }
+
+    &.loading {
+      .loader {
+        background-color: rgba(255, 255, 255, .5);
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+
+        @keyframes sk-scaleout {
+          0% {
+            transform: scale(0);
+          }
+          100% {
+            transform: scale(1.0);
+            opacity: 0;
+          }
+        }
+      }
+    }
+    &.loaded {
+      .loader {
+        background-color: rgba(255, 255, 255, .5);
+        &:after {
+          content: '';
+          border-style: solid;
+          box-sizing: border-box;
+          display: block;
+          width: 0;
+          height: 0;
+          border-width: 2.5vh 0px 2.5vh 4vh;
+          border-color: transparent transparent transparent #334860;
+          margin: 1.5vh 2.5vh;
+        }
+      }
+    }
   }
 
   .logo-container {

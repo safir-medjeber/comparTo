@@ -1,10 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Events, NavController} from 'ionic-angular';
 import {GameService} from "../../services/game.service";
 import {Storage} from '@ionic/storage';
 import {getTheme, Theme, themes} from "../../model/Theme";
 import {animations} from "./game-start.animation";
-import {SplashScreen} from "@ionic-native/splash-screen";
 
 @Component({
   selector: 'page-game-start',
@@ -20,8 +19,9 @@ export class GameStartPage {
   themes = themes;
   getTheme = getTheme;
   score: {[key in Theme]: Promise<number>}
+  private gamePageTimeout: () => void;
 
-  constructor(public navCtrl: NavController, private gameService: GameService, storage: Storage, events: Events, private splashScreen: SplashScreen) {
+  constructor(public navCtrl: NavController, private gameService: GameService, storage: Storage, events: Events) {
     let R = [];
     for (let i = 0, len = themes.length; i < len; i += 2)
       R.push(themes.slice(i, i + 2));
@@ -36,7 +36,12 @@ export class GameStartPage {
     }
     events.subscribe('reloadScores', reloadScore);
     reloadScore();
-    splashScreen.hide();
+  }
+
+  handleClick() {
+    if(this.click) {
+      this.gamePageTimeout()
+    }
   }
 
   goToGamePage(button: HTMLElement, label: Theme) {
@@ -46,16 +51,20 @@ export class GameStartPage {
     style.left = bounds.left + "px";
     style.width = bounds.width + "px";
     style.height = bounds.height + "px";
-    this.e.nativeElement.innerHTML = button.outerHTML
-    this.e.nativeElement.className = "btn-growth " + label
+    this.e.nativeElement.innerHTML = button.outerHTML + '<div class="loader"></div>'
+    this.e.nativeElement.className = "btn-growth loading " + label
     this.click = true;
 
-
-    let timer = new Promise((resolve, reject) => {
-      setTimeout(resolve, 2000, 'promise 1 resolved');
+    let timer = new Promise((resolve) => {
+      this.gamePageTimeout = resolve
+      setTimeout(this.gamePageTimeout, 2000, 'promise 1 resolved');
     });
+
     let gameLoading = this.gameService.setTheme(label)
-    Promise.all([timer, gameLoading]).then(_ => {
+    gameLoading.then(() =>
+      this.e.nativeElement.className = "btn-growth loaded " + label
+    )
+    Promise.all([timer, gameLoading]).then(() => {
         this.navCtrl.push('GamePage', {})
         setTimeout(() => {
           this.e.nativeElement.innerHTML = ""
