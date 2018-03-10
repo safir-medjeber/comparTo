@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
-import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
+import {animate, keyframes, style, transition, trigger} from "@angular/animations";
 
 const checkMark = `
     <svg class="status green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="75">
