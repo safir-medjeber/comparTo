@@ -76,13 +76,13 @@ page-game-start {
 
     .loader {
       position: absolute;
-      bottom: 15%;
+      bottom: 13%;
       left: 0;
       right: 0;
 
       border-radius: 100%;
-      width: 8vh;
-      height: 8vh;
+      width: 10vh;
+      height: 10vh;
       margin: auto;
     }
 
@@ -104,17 +104,19 @@ page-game-start {
     }
     &.loaded {
       .loader {
-        background-color: rgba(255, 255, 255, .5);
-        &:after {
-          content: '';
-          border-style: solid;
-          box-sizing: border-box;
-          display: block;
-          width: 0;
-          height: 0;
-          border-width: 2.5vh 0px 2.5vh 4vh;
-          border-color: transparent transparent transparent #334860;
-          margin: 1.5vh 2.5vh;
+        background: url("../assets/images/play.svg") no-repeat center;
+        background-size: contain;
+
+        animation-fill-mode: both;
+        animation: sk-scaleout 250ms 250ms;
+
+        @keyframes sk-scaleout {
+          0% {
+            transform: scale(0);
+          }
+          to {
+            transform: scale(1);
+          }
         }
       }
     }

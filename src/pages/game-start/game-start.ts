@@ -68,6 +68,7 @@ export class GameStartPage {
         this.navCtrl.push('GamePage', {})
         setTimeout(() => {
           this.e.nativeElement.innerHTML = ""
+          this.e.nativeElement.className = ""
           this.click = false
         }, 5000)
       }
