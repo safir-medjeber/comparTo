@@ -11,6 +11,7 @@ import {GameService} from "../../services/game.service";
 })
 
 export class GamePage {
+  failure: () => void;
   public currentQuestion: Question;
   public lastQuestion?: Question;
 
@@ -75,6 +76,11 @@ export class GamePage {
   reset(): any {
     this.animating = false;
     setTimeout(() => this.canReply = true,  400)
+  }
+
+  backButtonAction() {
+    this.navCtrl.popToRoot();
+    this.game.abandon()
   }
 
   goToGameEndPage() {

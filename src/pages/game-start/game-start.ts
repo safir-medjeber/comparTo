@@ -20,6 +20,7 @@ export class GameStartPage {
   getTheme = getTheme;
   score: {[key in Theme]: Promise<number>}
   private gamePageTimeout: () => void;
+  private failure: () => void;
 
   constructor(public navCtrl: NavController, private gameService: GameService, storage: Storage, events: Events) {
     let R = [];
@@ -44,6 +45,13 @@ export class GameStartPage {
     }
   }
 
+  backButtonAction() {
+    this.e.nativeElement.innerHTML = ""
+    this.e.nativeElement.className = ""
+    this.click = false
+    this.failure()
+  }
+
   goToGamePage(button: HTMLElement, label: Theme) {
     let bounds = button.getBoundingClientRect();
     let style = this.e.nativeElement.style;
@@ -55,8 +63,9 @@ export class GameStartPage {
     this.e.nativeElement.className = "btn-growth loading " + label
     this.click = true;
 
-    let timer = new Promise((resolve) => {
+    let timer = new Promise((resolve, failure) => {
       this.gamePageTimeout = resolve
+      this.failure = failure
       setTimeout(this.gamePageTimeout, 2000, 'promise 1 resolved');
     });
 
@@ -70,7 +79,7 @@ export class GameStartPage {
           this.e.nativeElement.innerHTML = ""
           this.e.nativeElement.className = ""
           this.click = false
-        }, 5000)
+        }, 2250)
       }
     )
   }
