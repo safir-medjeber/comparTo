@@ -12,7 +12,7 @@ const NAME = 0;
 const URL = 1;
 const VALUE = 2;
 const THEMATIC = 3;
-const UNIT = 4;
+//const UNIT = 4;
 
 
 @Injectable()
