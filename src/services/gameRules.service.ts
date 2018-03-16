@@ -85,6 +85,10 @@ export class GameRulesService {
   getScore() {
     return this.score;
   }
+
+  abandon() {
+    clearTimeout(this.timeout)
+  }
 }
 
 export enum GameState {

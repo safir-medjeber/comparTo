@@ -19,6 +19,8 @@ export class GameStartPage {
   themes = themes;
   getTheme = getTheme;
   score: {[key in Theme]: Promise<number>}
+  private gamePageTimeout: () => void;
+  private failure: () => void;
 
   constructor(public navCtrl: NavController, private gameService: GameService, storage: Storage, events: Events) {
     let R = [];
@@ -37,6 +39,19 @@ export class GameStartPage {
     reloadScore();
   }
 
+  handleClick() {
+    if(this.click) {
+      this.gamePageTimeout()
+    }
+  }
+
+  backButtonAction() {
+    this.e.nativeElement.innerHTML = ""
+    this.e.nativeElement.className = ""
+    this.click = false
+    this.failure()
+  }
+
   goToGamePage(button: HTMLElement, label: Theme) {
     let bounds = button.getBoundingClientRect();
     let style = this.e.nativeElement.style;
@@ -44,21 +59,27 @@ export class GameStartPage {
     style.left = bounds.left + "px";
     style.width = bounds.width + "px";
     style.height = bounds.height + "px";
-    this.e.nativeElement.innerHTML = button.outerHTML
-    this.e.nativeElement.className = "btn-growth " + label
+    this.e.nativeElement.innerHTML = button.outerHTML + '<div class="loader"></div>'
+    this.e.nativeElement.className = "btn-growth loading " + label
     this.click = true;
 
-
-    let timer = new Promise((resolve, reject) => {
-      setTimeout(resolve, 2000, 'promise 1 resolved');
+    let timer = new Promise((resolve, failure) => {
+      this.gamePageTimeout = resolve
+      this.failure = failure
+      setTimeout(this.gamePageTimeout, 2000, 'promise 1 resolved');
     });
+
     let gameLoading = this.gameService.setTheme(label)
-    Promise.all([timer, gameLoading]).then(_ => {
+    gameLoading.then(() =>
+      this.e.nativeElement.className = "btn-growth loaded " + label
+    )
+    Promise.all([timer, gameLoading]).then(() => {
         this.navCtrl.push('GamePage', {})
         setTimeout(() => {
           this.e.nativeElement.innerHTML = ""
+          this.e.nativeElement.className = ""
           this.click = false
-        }, 5000)
+        }, 2250)
       }
     )
   }

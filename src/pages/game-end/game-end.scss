@@ -2,6 +2,14 @@
 
 page-game-end {
 
+  .grid {
+    max-height: 100%;
+  }
+  .buttons {
+    margin: auto;
+    flex: 1;
+  }
+
   .vertical-align-content-page > * {
     display: flex !important;
     align-content: center !important;
@@ -71,6 +79,7 @@ page-game-end {
         height: 50%;
         svg {
           height: 100%;
+          filter: drop-shadow(0 0 5px rgba(0,0,0,.35));
         }
       }
       .label {
@@ -78,29 +87,29 @@ page-game-end {
       }
 
       &.replay {
-        @include green();
+        @include replay();
         .icon {
           background-image: url("../assets/images/reload.svg");
         }
       }
 
       &.main-menu {
-        @include beige();
+        @include main();
         .icon {
           background-image: url("../assets/images/list.svg");
         }
       }
       &.score {
-        @include yellow();
+        @include bronze();
         .icon {
           background-image: url("../assets/images/test.svg");
         }
       }
       &.themeRecord {
-        @include light-blue();
+        @include silver();
       }
       &.record {
-        @include purple-pink();
+        @include gold();
       }
     }
   }
