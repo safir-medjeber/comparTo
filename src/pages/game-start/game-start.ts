@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Events, NavController} from 'ionic-angular';
+import {Events, NavController, Platform} from 'ionic-angular';
 import {GameService} from "../../services/game.service";
 import {Storage} from '@ionic/storage';
 import {getTheme, Theme, themes} from "../../model/Theme";
@@ -20,7 +20,7 @@ export class GameStartPage {
   getTheme = getTheme;
   score: {[key in Theme]: Promise<number>}
 
-  constructor(public navCtrl: NavController, private gameService: GameService, storage: Storage, events: Events) {
+  constructor(public navCtrl: NavController, private gameService: GameService, storage: Storage, events: Events, platform: Platform) {
     let R = [];
     for (let i = 0, len = themes.length; i < len; i += 2)
       R.push(themes.slice(i, i + 2));
@@ -35,6 +35,11 @@ export class GameStartPage {
     }
     events.subscribe('reloadScores', reloadScore);
     reloadScore();
+    platform.registerBackButtonAction(() => {
+     //   platform.exitApp(); //
+      this.navCtrl.popToRoot();
+    })
+
   }
 
   goToGamePage(button: HTMLElement, label: Theme) {
