@@ -58,4 +58,8 @@ import {animations} from "../game-start/game-start.animation";
     this.navCtrl.popToRoot();
   }
 
+  backButtonAction() {
+    this.navCtrl.popToRoot();
+  }
+
 }

@@ -10,6 +10,7 @@
   height: 100%;
 
   .background-wrapper {
+    background-color: black;
     @include absolute;
 
     .background {

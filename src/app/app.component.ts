@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Platform} from 'ionic-angular';
+import {Platform, App} from 'ionic-angular';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {GameStartPage} from "../pages/game-start/game-start";
 
@@ -8,12 +8,19 @@ import {GameStartPage} from "../pages/game-start/game-start";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = GameStartPage;
+  rootPage: any = GameStartPage;
 
-  constructor(platform: Platform, splashScreen: SplashScreen) {
+  constructor(app: App, platform: Platform, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       splashScreen.hide();
-      platform.registerBackButtonAction(() => {})
+      platform.registerBackButtonAction(() => {
+        let nav = app.getActiveNav();
+        let activeView = nav.getActive();
+
+        if (typeof activeView.instance.backButtonAction === 'function') {
+          activeView.instance.backButtonAction()
+        }
+      })
     })
   }
 }
