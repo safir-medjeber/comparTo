@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.sparkteam.compareto" version="0.0.2" versionCode="13" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.sparkteam.compareto" version="0.0.3" versionCode="14" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>compareTo</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
@@ -94,8 +94,6 @@
         <variable name="XWALK_MODE" value="embedded" />
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
-    <plugin name="cordova-android-support-gradle-release" spec="^1.2.0">
-        <variable name="ANDROID_SUPPORT_VERSION" value="26" />
-    </plugin>
-    <engine name="android" spec="~7.0.0" />
+    <allow-navigation href="http://192.168.0.13:8100" />
+    <engine name="android" spec="~6.3.0" />
 </widget>
