@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Events, NavController} from 'ionic-angular';
+import {Events, NavController, Platform} from 'ionic-angular';
 import {GameService} from "../../services/game.service";
 import {Storage} from '@ionic/storage';
 import {getTheme, Theme, themes} from "../../model/Theme";
@@ -16,13 +16,12 @@ export class GameStartPage {
   state: string = '';
 
   chunkedTheme: any[];
-  themes = themes;
   getTheme = getTheme;
   score: {[key in Theme]: Promise<number>}
   private gamePageTimeout: () => void;
   private failure: () => void;
 
-  constructor(public navCtrl: NavController, private gameService: GameService, storage: Storage, events: Events) {
+  constructor(public navCtrl: NavController, private gameService: GameService, storage: Storage, events: Events, private platform: Platform) {
     let R = [];
     for (let i = 0, len = themes.length; i < len; i += 2)
       R.push(themes.slice(i, i + 2));
@@ -46,10 +45,17 @@ export class GameStartPage {
   }
 
   backButtonAction() {
-    this.e.nativeElement.innerHTML = ""
-    this.e.nativeElement.className = ""
-    this.click = false
-    this.failure()
+    if(this.click) {
+      this.e.nativeElement.innerHTML = ""
+      this.e.nativeElement.className = ""
+      this.click = false
+      this.failure()
+    }
+    else {
+      this.platform.ready().then(() => {
+        this.platform.exitApp()
+      })
+    }
   }
 
   goToGamePage(button: HTMLElement, label: Theme) {
