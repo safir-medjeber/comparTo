@@ -22,7 +22,7 @@ const place = {label: "places", format: '.'}
 export const getTheme: {[key in Theme]: ThemeProps} = {
   'country': {label: 'Populations', question: 'Quel pays est le plus peuplé ?', withMiniature: true, unit: habitant},
   'building': {label: 'Monuments', question: 'Quel édifice est le plus haut ?', withMiniature: false, unit: meter},
-  'food': {label: 'Aliments', question: 'Quelle aliment est le plus chere ?', withMiniature: false, unit: euro},
+  'food': {label: 'Aliments', question: 'Quel aliment est le plus cher ?', withMiniature: false, unit: euro},
   'car': {label: 'Voitures', question: 'Quelle voiture est la plus rapide ?', withMiniature: false, unit: km},
   'stadium': {label: 'Stades', question: 'Quel stade a la plus grande capacité ?', withMiniature: false, unit: place},
 }

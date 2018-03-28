@@ -85,7 +85,7 @@ export class GameStartPage {
           this.e.nativeElement.innerHTML = ""
           this.e.nativeElement.className = ""
           this.click = false
-        }, 2250)
+        }, 22250)
       }
     )
   }
